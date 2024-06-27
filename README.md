@@ -1,8 +1,26 @@
-# React + Vite
+# Devjobs web app (React + JavaScript + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Build a jobs board that pulls data from a local JSON file. 
 
-Currently, two official plugins are available:
+## Setting up the project:
+To run this project locally, first clone the project in a new folder and follow the below steps.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Clone the repository:
+```bash
+ git clone https://github.com/unocorn-squad/job-posting-app.git
+```
+
+Navigate to the Cloned Repository:
+```bash
+  cd <name of the repo>
+```
+
+Install Dependencies:
+```bash
+  npm install
+```
+
+Start the Project:
+```bash
+  npm run dev
+```
