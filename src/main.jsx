@@ -4,7 +4,7 @@ import { ThemeProvider } from '@emotion/react'
 
 import './themes/reset.css'
 import './themes/theme.css'
-import { lightTheme } from './themes/light.js'
+import { theme as lightTheme } from './themes/light.js'
 import App from './App.jsx'
 
 
