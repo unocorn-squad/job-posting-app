@@ -1,7 +1,8 @@
 {
   "name": "job-posting-app",
+  "description": "Our DevJobs web app enables users to browse and search for available job listings and explore detailed information about each job posting.",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,6 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -21,6 +24,7 @@
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "vite": "^5.3.1"
+    "vite": "^5.3.1",
+    "vite-plugin-svgr": "^4.2.0"
   }
 }
