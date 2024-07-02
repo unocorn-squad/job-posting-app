@@ -4,6 +4,7 @@ import "./App.css";
 
 function App() {
   return (
+    <>Job Board Placeholder
     <JobCard
       location="United Kingdom"
       title="Senior Software Engineer"
@@ -12,7 +13,8 @@ function App() {
       companyLogo={scootLogo}
       time="5h ago"
     />
-  );
+    </>
+  )
 }
 
 export default App;
