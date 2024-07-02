@@ -6,7 +6,7 @@
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Best Practices](#best-practices)
-- [Resources](#useful-resources)
+- [Resources](#resources)
 
 ## Overview
 
