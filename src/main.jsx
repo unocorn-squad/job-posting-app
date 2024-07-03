@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client'
 import { ThemeProvider } from '@emotion/react'
 
 import './themes/reset.css'
-import './themes/theme.css'
-import { lightTheme } from './themes/light.js'
+import './themes/index.css'
+import { theme as lightTheme } from './themes/light.js'
 import App from './App.jsx'
 
 
