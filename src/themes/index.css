@@ -21,7 +21,7 @@
     --color-violet-light: #939BF4;
     
     /* typography definitions */
-    --font-family-primary: "Kumbh Sans", sans-serif;;
+    --font-family-primary: "Kumbh Sans", sans-serif;
     --font-size-unit-base: 16px;
     --font-size-75: calc(var(--font-size-unit-base) * 0.75); /* 12 */
     --font-size-87: calc(var(--font-size-unit-base) * 0.875); /* 14 */
@@ -44,6 +44,7 @@
     font-family: var(--font-family-primary);
     font-weight: var(--font-weight-regular);
     color: var(--color-midnight);
+    background-color: var(--color-grey-light);
   }
   
   h1 {

@@ -1,20 +1,19 @@
-import scootLogo from "./assets/logos/scoot.svg";
-import JobCard from "./components/JobCard";
-import "./App.css";
+import JobCardComponent from "./components/JobCardComponent";
 
+const data = {
+  company: "Scoot",
+  logo: "./assets/images/logos/scoot.svg",
+  logoBackground: "hsl(36, 87%, 49%)",
+  position: "Senior Software Engineer",
+  postedAt: "5h ago",
+  contract: "Full Time",
+  location: "United Kingdom",
+};
 function App() {
   return (
-    <>Job Board Placeholder
-    <JobCard
-      location="United Kingdom"
-      title="Senior Software Engineer"
-      companyName="Scoot"
-      jobType="Full Time"
-      companyLogo={scootLogo}
-      time="5h ago"
-    />
-    </>
-  )
+     <JobCardComponent {...data} />
+   
+  );
 }
 
 export default App;
