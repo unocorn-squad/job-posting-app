@@ -1,6 +1,15 @@
+import HeaderComponent from "./components/HeaderComponent"
+
+
 function App() {
   return (
-    <>Job Board Placeholder</>
+    
+    <>
+        <HeaderComponent />
+
+    
+    </>
+
   )
 }
 
