@@ -2,9 +2,9 @@ export const theme = {
   colors: {
     white: 'var(--color-white)',
     black: 'var(--color-black)',
-    darkGrey: 'var(--color-grey-dark)',
-    grey: 'var(--color-grey)',
-    lightGrey: 'var(--color-grey-light)',
+    darkGray: 'var(--color-gray-dark)',
+    gray: 'var(--color-gray)',
+    lightGray: 'var(--color-gray-light)',
     midnight: 'var(--color-midnight)',
     darkBlue: 'var(--color-blue-dark)',
     violet: 'var(--color-violet)',
