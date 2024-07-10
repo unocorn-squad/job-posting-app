@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
-import scootLogo from "../assets/images/logos/scoot.svg";
+
 
 const StyledBox = styled.div`
-  height: 228px;
-  width: 327px;
+  min-height: 228px;
+  width: 100%;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
     width: 339px;
@@ -20,8 +20,6 @@ const StyledBox = styled.div`
   align-items: center;
   justify-items: center;
   position: relative;
-  margin-top: 15%;
-  margin-left: 5%;
 `;
 
 const OvalBullet = styled.div`
@@ -73,7 +71,7 @@ const LogoImage = styled.img`
   border-radius: 20px;
 `;
 
-const JobCardComponent = ({
+const JobCard = ({
   company,
   logo,
   logoBackground,
@@ -81,11 +79,12 @@ const JobCardComponent = ({
   postedAt,
   contract,
   location,
+  jobDetailsUrl,
 }) => {
   return (
     <StyledBox>
       <LogoImage
-        src={scootLogo}
+        src={{logo}}
         alt={`${company} logo`}
         logoBackground={logoBackground}
       />
@@ -105,4 +104,4 @@ const JobCardComponent = ({
   );
 };
 
-export default JobCardComponent;
+export default JobCard;

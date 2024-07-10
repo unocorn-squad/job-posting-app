@@ -44,7 +44,6 @@
     font-family: var(--font-family-primary);
     font-weight: var(--font-weight-regular);
     color: var(--color-midnight);
-    background-color: var(--color-gray-light);
   }
   
   h1 {
