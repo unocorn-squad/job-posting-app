@@ -1,4 +1,3 @@
-import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 
 // Temporarily importing JSON here to test code
@@ -14,6 +13,9 @@ const JobDetailContainer = styled.div`
 
 const JobDetailHeader = styled.div`
   color: ${props => props.theme.colors.darkGray};
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
 `;
 
 const JobTitle = styled.h1`
@@ -29,14 +31,12 @@ const JobLocation = styled.div`
 `;
 
 const JobDetailDescription = styled.div`
-  p {
+  p, ul, ol {
     color: ${props => props.theme.colors.darkGray};
   }
 `;
 
-
 export const JobDetailCard = () => {
-  const theme = useTheme();
 
   // TODO: For testing. Remove this once the components are connected
   const job = data[0];
@@ -44,20 +44,35 @@ export const JobDetailCard = () => {
   return (
     <JobDetailContainer>
       <JobDetailHeader>
-        <div>{job.postedAt} &#8226; {job.contract}</div>
-        <JobTitle>{job.position}</JobTitle>
-        <JobLocation>{job.location}</JobLocation>
+        <div>
+          <div>{job.postedAt} &#8226; {job.contract}</div>
+          <JobTitle>{job.position}</JobTitle>
+          <JobLocation>{job.location}</JobLocation>
+        </div>
 
-        {/* Button component goes here? */}
+        {/* TODO: Replace with button component? */}
+        <button>Apply Now</button>
+
       </JobDetailHeader>
       <JobDetailDescription>
+
         <p>{job.description}</p>
 
         <h3>Requirements</h3>
         <p>{job.requirements.content}</p>
+        <ul>
+          {job.requirements.items.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
 
         <h3>What You Will Do</h3>
         <p>{job.role.content}</p>
+        <ol>
+          {job.role.items.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ol>
 
       </JobDetailDescription>
     </JobDetailContainer>
