@@ -4,14 +4,14 @@ import styled from "@emotion/styled";
 
 const StyledBox = styled.div`
   min-height: 228px;
-  width: 100%;
+  width: 90%;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
-    width: 339px;
+    width: 45%;
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
-    width: 350px;
+    width: 30%;
   }
 
   border-radius: 8px;
@@ -23,17 +23,16 @@ const StyledBox = styled.div`
 `;
 
 const OvalBullet = styled.div`
-  width: 4px;
-  height: 4px;
+  width: vh;
+  min-height: 4px;
   border-radius: 50%;
   background-color: ${(props) => props.theme.colors.darkGrey};
-  margin: 8px 16px 0 13px;
+  padding: 8px 16px 0 13px;
 `;
 
 const InnerBox = styled.div`
-  height: 147px;
-  width: 286px;
-  text-align: left;
+  min-height: 147px;
+  width: 80%;
 `;
 
 const StyledTextBox = styled.div`
