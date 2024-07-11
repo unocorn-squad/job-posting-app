@@ -21,7 +21,7 @@ const CheckboxInput = styled.input`
   cursor: pointer;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.lightGray};
+    background-color: ${(props) => props.theme.colors.gray};
   }
 
   &:checked {
@@ -37,8 +37,11 @@ const CheckboxLabel = styled.label`
   display: none;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
+    margin: 5px 0 0 -2px;
+    font-size: 1.05rem;
     font-weight: ${(props) => props.theme.typography.fwBold};
     display: inline;
+
     span {
       display: none;
     }
