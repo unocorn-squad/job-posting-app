@@ -7,8 +7,8 @@
 @media screen and (min-width: 768px) {
     .checkbox {
         display: flex;
-        gap: 17px;
-        color: #19202D;
+        gap: var(--gutter-200);
+        color: var(--color-blue-dark);
     }
 
     .checkbox__label > span {
@@ -16,8 +16,8 @@
     }
 
     .checkbox__input {
-        outline: #5964E0; /* For keyboard navigation/accessibility purposes */
-        background-color: #F4F6F8; /* Change to variable name when available */
+        outline: var(--color-violet);
+        background-color: var(--color-gray-light);
         width: 24px;
         height: 24px;
         appearance: none;
@@ -26,19 +26,19 @@
     }
     
     .checkbox__input:hover {
-        background-color: #9DAEC2;
+        background-color: var(--color-gray);
     }
     
     .checkbox__input:checked {
-        background-color: #5964E0;
+        background-color: var(--color-violet);
         background-size: 65%;
         background-position: center 60%;
         background-repeat: no-repeat;
-        background-image: url('/src/assets/desktop/icon-check.svg');
+        background-image: url('/src/assets/images/icons/icon-check.svg');
     }
     
     .checkbox__label {
-        font-weight: bold;
+        font-weight: var(--font-weight-bold);
     }
 }
 
