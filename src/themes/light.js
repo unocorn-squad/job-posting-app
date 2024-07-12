@@ -26,6 +26,7 @@ export const theme = {
     space200: 'var(--gutter-200)',
     space300: 'var(--gutter-300)',
     space400: 'var(--gutter-400)',
+    space500: 'var(--gutter-500)',
   },
   typography: {
     familyPrimary: 'var(--font-family-primary)',
@@ -47,4 +48,18 @@ export const theme = {
     fwBlack: 'var(--font-weight-black)',
   },
   // define component variables here
-}
+
+  jobCard: {
+    bgColor:'var(--color-white)',
+
+    secondaryText: {
+      color: 'var(--color-gray-dark)',
+    },
+    logo: {
+      bgColor: 'var(--color-gray-dark)',
+    },
+    locationText: {
+      color: 'var(--color-violet)',
+    },
+  },
+};

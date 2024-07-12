@@ -1,38 +1,21 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-
 const StyledBox = styled.div`
-  min-height: 228px;
-  width: 90%;
-
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
-    width: 45%;
-  }
-
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
-    width: 30%;
-  }
-
   border-radius: 8px;
-  background-color: ${(props) => props.theme.colors.white};
-  display: grid;
-  align-items: center;
-  justify-items: center;
+  background-color: ${(props) => props.theme.jobCard.bgColor};
   position: relative;
 `;
 
 const OvalBullet = styled.div`
-  width: vh;
-  min-height: 4px;
-  border-radius: 50%;
-  background-color: ${(props) => props.theme.colors.darkGrey};
-  padding: 8px 16px 0 13px;
+  font-size: ${(props) => props.theme.typography.fs175};
+  color: ${(props) => props.theme.jobCard.secondaryText.color};
+  padding-left: ${(props) => props.theme.layout.space200};
+  padding-right: ${(props) => props.theme.layout.space200};
 `;
 
 const InnerBox = styled.div`
-  min-height: 147px;
-  width: 80%;
+  padding: ${(props) => props.theme.layout.space500};
 `;
 
 const StyledTextBox = styled.div`
@@ -43,26 +26,26 @@ const StyledTextBox = styled.div`
 const StyledText = styled.div`
   font-size: ${(props) => props.theme.typography.fs100};
   font-weight: ${(props) => props.theme.typography.fwRegular};
-  color: ${(props) => props.theme.colors.darkGrey};
-  padding-top: 10px;
+  color: ${(props) => props.theme.jobCard.secondaryText.color};
+  padding-top: ${(props) => props.theme.layout.space100};
 `;
 
 const StyledTitle = styled.div`
   font-size: ${(props) => props.theme.typography.fs125};
   font-weight: ${(props) => props.theme.typography.fwBold};
-  padding-top: 25px;
-  padding-bottom: 5px;
+  padding-top: ${(props) => props.theme.layout.space300};
 `;
 
 const StyledLocationText = styled.div`
-  padding-top: 40px;
+  padding-top: ${(props) => props.theme.layout.space300};
   font-size: ${(props) => props.theme.typography.fs87};
   font-weight: ${(props) => props.theme.typography.fwBold};
-  color: ${(props) => props.theme.colors.violet};
+  color: ${(props) => props.theme.jobCard.locationText.color};
 `;
 
 const LogoImage = styled.img`
-  padding: 25px 10px;
+  padding: ${(props) => props.theme.layout.space300}
+    ${(props) => props.theme.layout.space100};
   position: absolute;
   left: 32px;
   top: -32px;
@@ -78,28 +61,32 @@ const JobCard = ({
   postedAt,
   contract,
   location,
-  jobDetailsUrl,
+  jobDetailsURL,
 }) => {
   return (
-    <StyledBox>
-      <LogoImage
-        src={{logo}}
-        alt={`${company} logo`}
-        logoBackground={logoBackground}
-      />
+    <a href={jobDetailsURL}>
+      {
+        <StyledBox>
+          <LogoImage
+            src={logo}
+            alt={`${company} logo`}
+            logoBackground={logoBackground}
+          />
 
-      <InnerBox>
-        <StyledTextBox>
-          <StyledText>{postedAt}</StyledText>
-          <OvalBullet />
-          <StyledText>{contract}</StyledText>
-        </StyledTextBox>
+          <InnerBox>
+            <StyledTextBox>
+              <StyledText>{postedAt}</StyledText>
+              <OvalBullet> . </OvalBullet>
+              <StyledText>{contract}</StyledText>
+            </StyledTextBox>
 
-        <StyledTitle>{position}</StyledTitle>
-        <StyledText>{company}</StyledText>
-        <StyledLocationText>{location}</StyledLocationText>
-      </InnerBox>
-    </StyledBox>
+            <StyledTitle>{position}</StyledTitle>
+            <StyledText>{company}</StyledText>
+            <StyledLocationText>{location}</StyledLocationText>
+          </InnerBox>
+        </StyledBox>
+      }
+    </a>
   );
 };
 
