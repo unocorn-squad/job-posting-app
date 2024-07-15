@@ -27,10 +27,10 @@ const SearchBar = () => {
   return (
     <Row>
       <Column flex={1.5} borderTopLeftRadius="8px" borderBottomLeftRadius="8px">
-        <FormInput icon={SearchIcon} altText={"Search Icon"} />
+        <FormInput icon={SearchIcon} altText={"Search Icon"} placeholder={"Filter by title, companies, expertise..."}/>
       </Column>
       <Column flex={1.2} borderLeft="0" borderRight="0">
-        <FormInput icon={LocationIcon} altText={"Location Icon"} />
+        <FormInput icon={LocationIcon} altText={"Location Icon"}  placeholder={"Filter by location..."} />
       </Column>
       <Column borderTopRightRadius="8px" borderBottomRightRadius="8px"></Column>
     </Row>
