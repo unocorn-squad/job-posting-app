@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import FormInputTitle from "./FormInputTitle";
-import FormInputLocation from "./FormInputLocation";
+import FormInput from "./FormInput";
+import LocationIcon from "../assets/images/icons/icon-location.svg";
+import SearchIcon from "../assets/images/icons/icon-search.svg";
 
 const Row = styled.div`
   display: flex;
@@ -26,10 +27,10 @@ const SearchBar = () => {
   return (
     <Row>
       <Column flex={1.5} borderTopLeftRadius="8px" borderBottomLeftRadius="8px">
-        <FormInputTitle />
+        <FormInput icon={SearchIcon} altText={"Search Icon"} />
       </Column>
       <Column flex={1.2} borderLeft="0" borderRight="0">
-        <FormInputLocation />
+        <FormInput icon={LocationIcon} altText={"Location Icon"} />
       </Column>
       <Column borderTopRightRadius="8px" borderBottomRightRadius="8px"></Column>
     </Row>

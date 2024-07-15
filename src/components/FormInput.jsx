@@ -1,11 +1,10 @@
 import React from "react";
-import SearchIcon from "../assets/images/icons/icon-search.svg";
-import { Input, Icon } from "./SharedStyles"; 
+import { Input, Icon } from "./SharedStyles";
 
-const FormInputTitle = () => {
+const FormInput = ({ icon, altText }) => {
   return (
     <>
-      <Icon src={SearchIcon} alt="Search Icon" />
+      <Icon src={icon} alt={altText} />
       <Input
         type="text"
         id="filter-options-text"
@@ -16,4 +15,4 @@ const FormInputTitle = () => {
   );
 };
 
-export default FormInputTitle;
+export default FormInput;
