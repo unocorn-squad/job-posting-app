@@ -6,6 +6,7 @@
     --gutter-200: calc(var(--gutter-unit-base) * 2);
     --gutter-300: calc(var(--gutter-unit-base) * 3);
     --gutter-400: calc(var(--gutter-unit-base) * 4);
+    --gutter-500: calc(var(--gutter-unit-base) * 5); 
   }
   
   body {
