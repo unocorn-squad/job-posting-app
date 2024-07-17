@@ -5,20 +5,19 @@ import MobileHeader from '../assets/images/header/bg-pattern-header--mobile.svg'
 import TabletHeader from '../assets/images/header/bg-pattern-header--tablet.svg';
 
 const StyledHeaderContainer = styled.div`
-  width: 100%;
-  // @TODO Fix my mistake here with the height issue
-  min-height: 136px;
+  width:100%;
+  height: 136px;
   display: flex;
-  background-image: url('${MobileHeader}');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: linear-gradient(to right,rgba(0,0,0,0) 100%, ${(props) => props.theme.colors.violet} 60%), url('${MobileHeader}');
+  background-size: 100% 100%;
+  overflow:hidden;
+  background-repeat: no-repeat; 
   align-items: center;
   justify-items: center;
-  // @TODO Use padding to position the header text content
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
-    min-height: 160px;
-    background-image: url('${TabletHeader}');
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet_small})  {
+    background: linear-gradient(to right,rgba(0,0,0,0) 10%, ${(props) => props.theme.colors.violet} 60%), url('${TabletHeader}');  
+    height:160px;
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
@@ -31,6 +30,7 @@ const StyledText = styled.div`
   font-weight: ${(props) => props.theme.typography.fwBold};
   color: ${(props) => props.theme.colors.white};
   transform: translateY(-30px);
+  padding-left: 80px;
 `;
 
 const Header = () => {
