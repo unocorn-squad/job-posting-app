@@ -12,7 +12,7 @@ const Row = styled.div`
 const Column = styled.div`
   flex: ${(props) => props.flex || 1};
   padding: ${(props) => props.theme.layout.space100};
-  border: 1px solid #ccc;
+  border: 1px solid ${(props) => props.theme.searchBar.border.color};
   border-top-left-radius: ${(props) => props.borderTopLeftRadius || "0"};
   border-bottom-left-radius: ${(props) => props.borderBottomLeftRadius || "0"};
   border-top-right-radius: ${(props) => props.borderTopRightRadius || "0"};
@@ -27,12 +27,29 @@ const SearchBar = () => {
   return (
     <Row>
       <Column flex={1.5} borderTopLeftRadius="8px" borderBottomLeftRadius="8px">
-        <FormInput icon={SearchIcon} altText={"Search Icon"} placeholder={"Filter by title, companies, expertise..."}/>
+        <FormInput
+          icon={SearchIcon}
+          id={"search-title"}
+          name={"Search title"}
+          iconAltText={"Search Icon"}
+          placeholder={"Filter by title, companies, expertise..."}
+          label={"Filter by title, companies, expertise"}
+        />
       </Column>
       <Column flex={1.2} borderLeft="0" borderRight="0">
-        <FormInput icon={LocationIcon} altText={"Location Icon"}  placeholder={"Filter by location..."} />
+        <FormInput
+          icon={LocationIcon}
+          id={"filter-location"}
+          name={"Filter Location"}
+          iconAltText={"Location Icon"}
+          placeholder={"Filter by location..."}
+          label={"Filter by location"}
+        />
       </Column>
-      <Column borderTopRightRadius="8px" borderBottomRightRadius="8px"></Column>
+      <Column borderTopRightRadius="8px" borderBottomRightRadius="8px">
+        {/* @TODO add the Checkbox and Button components once they are complete
+         */}
+      </Column>
     </Row>
   );
 };

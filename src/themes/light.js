@@ -62,4 +62,10 @@ export const theme = {
       color: 'var(--color-violet)',
     },
   },
+
+  searchBar: {
+    border:{
+      color: '#cccccc',
+    }
+  }
 };
