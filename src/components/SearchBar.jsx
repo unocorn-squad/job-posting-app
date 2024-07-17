@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "@emotion/styled";
-import FormInput from "./FormInput";
-import LocationIcon from "../assets/images/icons/icon-location.svg";
-import SearchIcon from "../assets/images/icons/icon-search.svg";
+import styled from '@emotion/styled';
+
+import FormInput from './FormInput';
+import LocationIcon from '../assets/images/icons/icon-location.svg';
+import SearchIcon from '../assets/images/icons/icon-search.svg';
 
 const Row = styled.div`
   display: flex;
@@ -13,40 +13,42 @@ const Column = styled.div`
   flex: ${(props) => props.flex || 1};
   padding: ${(props) => props.theme.layout.space100};
   border: 1px solid ${(props) => props.theme.searchBar.border.color};
-  border-top-left-radius: ${(props) => props.borderTopLeftRadius || "0"};
-  border-bottom-left-radius: ${(props) => props.borderBottomLeftRadius || "0"};
-  border-top-right-radius: ${(props) => props.borderTopRightRadius || "0"};
+  border-top-left-radius: ${(props) => props.borderTopLeftRadius || '0'};
+  border-bottom-left-radius: ${(props) => props.borderBottomLeftRadius || '0'};
+  border-top-right-radius: ${(props) => props.borderTopRightRadius || '0'};
   border-bottom-right-radius: ${(props) =>
-    props.borderBottomRightRadius || "0"};
-  border-left: ${(props) => props.borderLeft || "1px solid #ccc"};
-  border-right: ${(props) => props.borderRight || "1px solid #ccc"};
+    props.borderBottomRightRadius || '0'};
+  border-left: ${(props) =>
+    props.borderLeft || `1px solid ${props.theme.searchBar.border.color}`};
+  border-right: ${(props) =>
+    props.borderRight || `1px solid ${props.theme.searchBar.border.color}`};
   display: flex;
 `;
 
 const SearchBar = () => {
   return (
     <Row>
-      <Column flex={1.5} borderTopLeftRadius="8px" borderBottomLeftRadius="8px">
+      <Column flex={1.5} borderTopLeftRadius='8px' borderBottomLeftRadius='8px'>
         <FormInput
           icon={SearchIcon}
-          id={"search-title"}
-          name={"Search title"}
-          iconAltText={"Search Icon"}
-          placeholder={"Filter by title, companies, expertise..."}
-          label={"Filter by title, companies, expertise"}
+          id={'search-title'}
+          name={'Search title'}
+          iconAltText={'Search Icon'}
+          placeholder={'Filter by title, companies, expertise...'}
+          label={'Filter by title, companies, expertise'}
         />
       </Column>
-      <Column flex={1.2} borderLeft="0" borderRight="0">
+      <Column flex={1.2} borderLeft='0' borderRight='0'>
         <FormInput
           icon={LocationIcon}
-          id={"filter-location"}
-          name={"Filter Location"}
-          iconAltText={"Location Icon"}
-          placeholder={"Filter by location..."}
-          label={"Filter by location"}
+          id={'filter-location'}
+          name={'Filter Location'}
+          iconAltText={'Location Icon'}
+          placeholder={'Filter by location...'}
+          label={'Filter by location'}
         />
       </Column>
-      <Column borderTopRightRadius="8px" borderBottomRightRadius="8px">
+      <Column borderTopRightRadius='8px' borderBottomRightRadius='8px'>
         {/* @TODO add the Checkbox and Button components once they are complete
          */}
       </Column>
