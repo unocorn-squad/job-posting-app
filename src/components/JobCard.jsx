@@ -1,5 +1,4 @@
-import React from "react";
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const StyledBox = styled.div`
   border-radius: 8px;

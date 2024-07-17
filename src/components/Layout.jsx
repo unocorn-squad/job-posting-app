@@ -24,7 +24,6 @@ const Layout = ({ children }) => {
   return (
     <LayoutWrapper>
       {/* @TODO Import Header component once it's complete. */}
-      Header Component
       <ContentWrapper>
         <InnerContentWrapper>{children}</InnerContentWrapper>
       </ContentWrapper>
