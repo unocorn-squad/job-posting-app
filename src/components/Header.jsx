@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import styled from '@emotion/styled';
 
 import DesktopHeader from '../assets/images/header/bg-pattern-header.svg';
 import MobileHeader from '../assets/images/header/bg-pattern-header--mobile.svg';
@@ -27,13 +27,13 @@ const StyledHeaderContainer = styled.div`
 `;
 
 const StyledInnerHeaderContainer = styled.div`
-  max-width: ${({ theme }) => theme.layout.maxWidth};
+  max-width: ${(props) => props.theme.layout.maxWidth};
   width: 100%;
   margin: 0 auto;
   padding: ${(props) => `0 ${props.theme.layout.space400}`};
   transform: translateY(-24px);
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet_small}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
     transform: translateY(-32px);
   }
 `;
