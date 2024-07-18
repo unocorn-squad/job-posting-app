@@ -21,12 +21,17 @@ export const theme = {
     desktop_large: '1440px',
   },
   layout: {
+    bgColor: 'var(--color-gray-light)',
+    maxWidth: '1024px',
     space50: 'var(--gutter-50)',
     space100: 'var(--gutter-100)',
     space200: 'var(--gutter-200)',
     space300: 'var(--gutter-300)',
     space400: 'var(--gutter-400)',
     space500: 'var(--gutter-500)',
+    space600: 'var(--gutter-600)',
+    space700: 'var(--gutter-700)',
+    space800: 'var(--gutter-800)',
   },
   typography: {
     familyPrimary: 'var(--font-family-primary)',
@@ -47,10 +52,8 @@ export const theme = {
     fwExtraBold: 'var(--font-weight-extra-bold)',
     fwBlack: 'var(--font-weight-black)',
   },
-  // define component variables here
-
   jobCard: {
-    bgColor:'var(--color-white)',
+    bgColor: 'var(--color-white)',
 
     secondaryText: {
       color: 'var(--color-gray-dark)',
@@ -60,6 +63,11 @@ export const theme = {
     },
     locationText: {
       color: 'var(--color-violet)',
+    },
+  },
+  searchBar: {
+    border: {
+      color: '#cccccc',
     },
   },
 };
