@@ -32,6 +32,8 @@ export const theme = {
     space600: 'var(--gutter-600)',
     space700: 'var(--gutter-700)',
     space800: 'var(--gutter-800)',
+    space900: 'var(--gutter-900)',
+    space1000: 'var(--gutter-1000)',
   },
   typography: {
     familyPrimary: 'var(--font-family-primary)',

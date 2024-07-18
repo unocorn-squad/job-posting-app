@@ -10,6 +10,8 @@
   --gutter-600: calc(var(--gutter-unit-base) * 6);
   --gutter-700: calc(var(--gutter-unit-base) * 7);
   --gutter-800: calc(var(--gutter-unit-base) * 8);
+  --gutter-900: calc(var(--gutter-unit-base) * 9);
+  --gutter-1000: calc(var(--gutter-unit-base) * 10);
 }
 
 body {
@@ -40,7 +42,7 @@ body {
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semi-bold: 600;
-  --font-weight-bold: 700;
+  --font-weight-bold: 900;
   --font-weight-extra-bold: 800;
   --font-weight-black: 900;
 
