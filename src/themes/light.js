@@ -72,4 +72,19 @@ export const theme = {
       color: '#cccccc',
     },
   },
+  jobDetailCard : {
+    bgColor: 'var(--color-white)',
+    header: {
+      color: 'var(--color-gray-dark)',
+    },
+    title: {
+      color: 'var(--color-blue-dark)',
+    },
+    location: {
+      color: 'var(--color-violet)',
+    },
+    description: {
+      color: 'var(--color-gray-dark)',
+    },
+  }
 };

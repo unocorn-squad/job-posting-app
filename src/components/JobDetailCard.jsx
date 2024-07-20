@@ -4,18 +4,18 @@ const JobDetailContainer = styled.div`
   padding: ${props => props.theme.layout.space500};
   margin: 0 auto;
   border-radius: 6px;
-  background-color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.jobDetailCard.bgColor};
 `;
 
 const JobDetailHeader = styled.div`
-  color: ${props => props.theme.colors.darkGray};
+  color: ${props => props.theme.jobDetailCard.header.color};
   display: flex;
   align-items: center;  
   justify-content: space-between;
 `;
 
 const JobTitle = styled.h1`
-  color: ${props => props.theme.colors.darkBlue};
+  color: ${props => props.theme.jobDetailCard.title.color};
   margin-top: ${props => props.theme.layout.space50};
   margin-bottom: ${props => props.theme.layout.space100};
 `;
@@ -23,12 +23,12 @@ const JobTitle = styled.h1`
 const JobLocation = styled.div`
   font-size: ${props => props.theme.typography.fs87};
   font-weight: ${props => props.theme.typography.fwBold};
-  color: ${props => props.theme.colors.violet};
+  color: ${props => props.theme.jobDetailCard.location.color};
 `;
 
 const JobDetailDescription = styled.div`
   p, ul, ol {
-    color: ${props => props.theme.colors.darkGray};
+    color: ${props => props.theme.jobDetailCard.description.color};
   }
 `;
 
