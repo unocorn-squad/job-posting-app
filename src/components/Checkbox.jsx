@@ -7,13 +7,13 @@ const CheckboxContainer = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
     display: flex;
     gap: ${(props) => props.theme.layout.space200};
-    color: ${(props) => props.theme.colors.darkBlue};
+    color: ${(props) => props.theme.checkbox.label.color};
   }
 `;
 
 const CheckboxInput = styled.input`
-  outline: ${(props) => props.theme.colors.violet};
-  background-color: ${(props) => props.theme.colors.lightGray};
+  outline: ${(props) => props.theme.checkbox.outlineColor};
+  background-color: ${(props) => props.theme.checkbox.bgColor};
   width: 24px;
   height: 24px;
   appearance: none;
@@ -21,11 +21,11 @@ const CheckboxInput = styled.input`
   cursor: pointer;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.gray};
+    background-color: ${(props) => props.theme.checkbox.hoverBgColor};
   }
 
   &:checked {
-    background-color: ${(props) => props.theme.colors.violet};
+    background-color: ${(props) => props.theme.checkbox.checkedBgColor};
     background-size: 65%;
     background-position: center 60%;
     background-repeat: no-repeat;
@@ -54,7 +54,7 @@ const CheckboxLabel = styled.label`
   }
 `;
 
-export const Checkbox = () => {
+const Checkbox = ({ id, label }) => {
   // State and handler set up for future use
   const [isChecked, setIsChecked] = useState(false);
 
@@ -66,14 +66,16 @@ export const Checkbox = () => {
     <CheckboxContainer>
       <CheckboxInput
         type="checkbox"
-        name="fulltime"
-        id="fulltime"
-        value="fulltime"
+        name={id}
+        id={id}
+        value={id}
         onChange={handleCheck}
       />
-      <CheckboxLabel htmlFor="fulltime">
-        Full Time <span>Only</span>
+      <CheckboxLabel htmlFor={id}>
+        {label}
       </CheckboxLabel>
     </CheckboxContainer>
   );
 };
+
+export default Checkbox;
