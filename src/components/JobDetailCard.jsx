@@ -1,14 +1,10 @@
 import styled from '@emotion/styled';
 
-// Temporarily importing JSON here to test code
-import data from '../assets/data.json';
-
 const JobDetailContainer = styled.div`
   padding: ${props => props.theme.layout.space500};
   margin: 0 auto;
   border-radius: 6px;
   background-color: ${props => props.theme.colors.white};
-  max-width: 730px;
 `;
 
 const JobDetailHeader = styled.div`
@@ -36,10 +32,7 @@ const JobDetailDescription = styled.div`
   }
 `;
 
-export const JobDetailCard = () => {
-
-  // TODO: For testing. Remove this once the components are connected
-  const job = data[0];
+const JobDetailCard = ({ job }) => {
 
   return (
     <JobDetailContainer>
@@ -50,7 +43,7 @@ export const JobDetailCard = () => {
           <JobLocation>{job.location}</JobLocation>
         </div>
 
-        {/* TODO: Replace with button component? */}
+        {/* TODO: Replace with button component once complete */}
         <button>Apply Now</button>
 
       </JobDetailHeader>
@@ -78,3 +71,5 @@ export const JobDetailCard = () => {
     </JobDetailContainer>
   );
 };
+
+export default JobDetailCard;
