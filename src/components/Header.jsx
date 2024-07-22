@@ -7,18 +7,18 @@ const StyledHeaderContainer = styled.div`
   justify-items: center;
   width: 100%;
   height: 136px;
-  background-image: url('/images/header/bg-pattern-header--mobile.svg');
+  background-image: url('./images/header/bg-pattern-header--mobile.svg');
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
     height: 160px;
-    background-image: url('/images/header/bg-pattern-header--tablet.svg');
+    background-image: url('./images/header/bg-pattern-header--tablet.svg');
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
-    background-image: url('/images/header/bg-pattern-header.svg');
+    background-image: url('./images/header/bg-pattern-header.svg');
   }
 `;
 
