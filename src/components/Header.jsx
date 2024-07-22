@@ -1,28 +1,24 @@
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 
-import DesktopHeader from '../assets/images/header/bg-pattern-header.svg';
-import MobileHeader from '../assets/images/header/bg-pattern-header--mobile.svg';
-import TabletHeader from '../assets/images/header/bg-pattern-header--tablet.svg';
-
 const StyledHeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-items: center;
   width: 100%;
   height: 136px;
-  background-image: url('${MobileHeader}');
+  background-image: url('/images/header/bg-pattern-header--mobile.svg');
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
     height: 160px;
-    background-image: url('${TabletHeader}');
+    background-image: url('/images/header/bg-pattern-header--tablet.svg');
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
-    background-image: url('${DesktopHeader}');
+    background-image: url('/images/header/bg-pattern-header.svg');
   }
 `;
 
