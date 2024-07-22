@@ -11,7 +11,7 @@ import App from './App.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={lightTheme}>
-      <BrowserRouter>
+      <BrowserRouter basename='/job-posting-app/'>
         <App />
       </BrowserRouter>
     </ThemeProvider>
