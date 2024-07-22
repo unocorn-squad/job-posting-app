@@ -72,4 +72,14 @@ export const theme = {
       color: '#cccccc',
     },
   },
+  checkbox: {
+    bgColor: 'var(--color-gray-light)',
+    hoverBgColor: 'var(--color-gray)',
+    checkedBgColor: 'var(--color-violet)',
+    outlineColor: 'var(--color-violet)',
+
+    label: {
+      color: 'var(--color-blue-dark)',
+    },
+  },
 };
