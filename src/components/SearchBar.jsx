@@ -4,6 +4,7 @@ import FormInput from "./FormInput";
 import LocationIcon from "../assets/images/icons/icon-location.svg";
 import SearchIcon from "../assets/images/icons/icon-search.svg";
 import CustomButton from "./CustomButton";
+import Checkbox from "./Checkbox";
 
 const Row = styled.div`
   display: flex;
@@ -25,6 +26,7 @@ const Column = styled.div`
   border-right: ${(props) =>
     props.borderRight || `1px solid ${props.theme.searchBar.border.color}`};
   display: flex;
+  align-items: center;
 `;
 
 const SearchBar = () => {
@@ -52,8 +54,7 @@ const SearchBar = () => {
       </Column>
       <Column borderTopRightRadius="8px" borderBottomRightRadius="8px">
         <Column flex={2} border="none" borderLeft="0" borderRight="0">
-          {/* @TODO add the Checkbox once it is complete
-           */}
+          <Checkbox id={"search-bar-checkbox"} label={"Full Time Only"} />
         </Column>
         <Column border="none" borderLeft="0" borderRight="0">
           <CustomButton
