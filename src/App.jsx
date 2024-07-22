@@ -8,7 +8,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<JobSearch />} />
-      <Route path='jobs/:jobId' element={<JobDetails />} />
+      <Route path='/jobs/:jobId' element={<JobDetails />} />
       <Route path='*' element={<Error />} />
     </Routes>
   );
