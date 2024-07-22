@@ -4,6 +4,6 @@ import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/job-posting-app/',
+  base: './',
   plugins: [react(), svgr()],
 });
