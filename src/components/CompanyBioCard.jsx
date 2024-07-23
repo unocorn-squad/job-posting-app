@@ -81,6 +81,11 @@ const CompanyLink = styled.a`
     padding: ${theme.layout.space100} 0 ${theme.layout.space300};
     text-decoration: none;
 
+    &:hover {
+      text-decoration: underline;
+      color: ${theme.companyBioCard.linkHoverColor};
+    }
+
     @media (min-width: ${theme.breakpoints.tablet_small}) {
       padding: ${theme.layout.space100} 0;
     }
@@ -93,6 +98,11 @@ const CompanyBioCard = ({
   logoBackground,
   website
 }) => {
+
+  // All the mock data are using example.com as the main domain website
+  // This helps to make it more realistic by formatting the display text to look like a real website.
+  const formatUrlDisplayText = `${company.toLowerCase().replace(/\s+/g, '-')}.com`;
+
   return (
     <CompanyBioContainer>
       <LogoImageWrapper logoBackground={logoBackground}>
@@ -103,7 +113,7 @@ const CompanyBioCard = ({
         <TextInfo>
           <h2>{company}</h2>
           <CompanyLink href={website}>
-            {company.toLowerCase()}.com
+            {formatUrlDisplayText}
           </CompanyLink>
         </TextInfo>
         {/* TODO: Replace with button component */}

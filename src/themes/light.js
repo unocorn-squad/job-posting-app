@@ -85,5 +85,6 @@ export const theme = {
   companyBioCard: {
     bgColor: 'var(--color-white)',
     linkColor: 'var(--color-gray-dark)',
+    linkHoverColor: 'var(--color-violet)',
   }
 };
