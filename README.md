@@ -12,7 +12,7 @@
 
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React.js" /> <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript" /> <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" alt="Vite" /> <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" alt="Styled Components" />
 
-Inspired by [Frontend Mentor's coding challenges](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l), this is a job board app in which users are able to: 
+Inspired by [Frontend Mentor's coding challenges](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l), this is a job board app in which users are able to:
 
 - View the optimal layout for each page depending on their device's screen size;
 - See hover states for all interactive elements throughout the site;
@@ -33,32 +33,36 @@ Before getting started, install [Node.js](https://nodejs.org/) on your developme
 To run this project locally, follow the steps below:
 
 1. Clone the repository
+
 ```bash
  git clone https://github.com/unocorn-squad/job-posting-app.git
 ```
 
 2. Navigate to the cloned repository
+
 ```bash
   cd <name of the repo>
 ```
 
 3. Install the project's dependencies
+
 ```bash
   npm install
 ```
 
 4. Start the project!
+
 ```bash
   npm run dev
 ```
 
-You're all set 🥳🎉 You should be able to view the project by navigating to http://localhost:5173/. 
+You're all set 🥳🎉 You should be able to view the project by navigating to http://localhost:5173/job-posting-app/.
 
 ## Project Structure
 
 ```
 src
-├── assets       
+├── assets
 ├── components
 ├── pages
 ├── themes
@@ -75,21 +79,23 @@ src
 ### Development Process
 
 1. **Create a Feature Branch**: Create a branch from the `main` branch with a descriptive name. Example: `jc/task-name-a`.
-    > :bangbang: Before starting your work, make sure to pull the latest changes from the `main` branch and merge them into your feature branch!
-    
+   > :bangbang: Before starting your work, make sure to pull the latest changes from the `main` branch and merge them into your feature branch!
 2. **Commit Your Work Regularly**: Be as descriptive as possible in your commit messages. Example: “created and styled Component A” conveys what you did much more clearly than “styled a component”.
-    > :bangbang: Make sure to commit your work at the end of the day.
+
+   > :bangbang: Make sure to commit your work at the end of the day.
 
 3. **Develop, Test, and Verify Locally**
-    - Complete development in your local environment.
-    - Leave comments in your code to ensure clarity.
-    - Test your own work thoroughly.
+
+   - Complete development in your local environment.
+   - Leave comments in your code to ensure clarity.
+   - Test your own work thoroughly.
 
 4. **Create a Pull Request for Code Review**
-    - Create a pull request with a relevant name and description.
-    - Add screenshots, links, and other context to help reviewers understand your changes.
-    - Test your work in the dev environment if applicable.
-    - Ensure you have at least two approvals (ideally one from a lead).
+
+   - Create a pull request with a relevant name and description.
+   - Add screenshots, links, and other context to help reviewers understand your changes.
+   - Test your work in the dev environment if applicable.
+   - Ensure you have at least two approvals (ideally one from a lead).
 
 5. **Merge Your Pull Request**: Once all PR requirements are met, merge your feature branch into the main branch.
 
@@ -127,10 +133,10 @@ const ExampleComponent = () => {
       {/* Additional JSX */}
     </div>
   );
-}
+};
 ```
 
-### Creating Styled Components using Emotion 
+### Creating Styled Components using Emotion
 
 We will be leveraging Emotion, a powerful CSS-in-JS library, to style React components dynamically using JavaScript. One standout feature is the theme object, facilitating consistent theming throughout your application. Here's a guide on integrating and utilizing the theme object with Emotion's styled components:
 
@@ -140,14 +146,14 @@ We will be leveraging Emotion, a powerful CSS-in-JS library, to style React comp
 // light.js
 
 export const theme = {
-  // 
+  //
   // Below all predefined variables, define your component variables
-  // 
+  //
   componentName: {
     bgColor: 'var(--color-violet)',
     color: 'var(--color-white)',
     // ...
-  }
+  },
 };
 ```
 
@@ -158,11 +164,11 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const StyledButton = styled.button`
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primary};
   color: white;
   border: none;
-  padding: ${props => props.theme.spacing.medium};
-  font-family: ${props => props.theme.fonts.body};
+  padding: ${(props) => props.theme.spacing.medium};
+  font-family: ${(props) => props.theme.fonts.body};
   cursor: pointer;
 `;
 
@@ -178,7 +184,7 @@ const YourComponent = () => {
 export default YourComponent;
 ```
 
-For comprehensive guidance on constructing styled components with Emotion, refer to the [Emotion documentation](https://emotion.sh/docs/introduction). 
+For comprehensive guidance on constructing styled components with Emotion, refer to the [Emotion documentation](https://emotion.sh/docs/introduction).
 
 ## Resources
 
