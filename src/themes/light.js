@@ -56,7 +56,7 @@ export const theme = {
   },
   jobCard: {
     bgColor: 'var(--color-white)',
-
+    title: 'var(--color-blue-dark)',
     secondaryText: {
       color: 'var(--color-gray-dark)',
     },
