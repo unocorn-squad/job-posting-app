@@ -97,4 +97,9 @@ export const theme = {
       color: 'var(--color-blue-dark)',
     },
   },
+  companyBioCard: {
+    bgColor: 'var(--color-white)',
+    linkColor: 'var(--color-gray-dark)',
+    linkHoverColor: 'var(--color-violet)',
+  }
 };
