@@ -10,7 +10,6 @@ const CompanyBioContainer = styled.div`
 
     @media (min-width: ${theme.breakpoints.tablet_small}) {
       flex-direction: row;
-      height: 140px;
     }
   `};
 `;
@@ -25,10 +24,10 @@ const LogoImageWrapper = styled.div`
     border-radius: 16px;
     align-items: center;
     justify-content: center;
-    margin-top: -1.5rem;
+    transform: translateY(-1.5rem);
 
     @media (min-width: ${theme.breakpoints.tablet_small}) {
-      margin-top: 0;
+      transform: translateY(0);
       width: 140px;
       height: 140px;
       border-radius: 6px 0 0 6px;
@@ -43,12 +42,12 @@ const LogoImage = styled.img`
 
 const CompanyInfo = styled.div`
   ${({ theme }) => `
-    padding: ${theme.layout.space300} 0 ${theme.layout.space400};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     flex-grow: 1;
+    padding-bottom: ${theme.layout.space400};
 
     @media (min-width: ${theme.breakpoints.tablet_small}) {
       flex-direction: row;
