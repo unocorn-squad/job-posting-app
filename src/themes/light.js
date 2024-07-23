@@ -82,4 +82,10 @@ export const theme = {
       color: 'var(--color-blue-dark)',
     },
   },
+
+  secondaryButton: {
+    bgColor: 'rgba(89, 100, 224, 0.1)',
+    hoverBgColor: 'rgba(89, 100, 224, 0.35)',
+  },
+
 };
