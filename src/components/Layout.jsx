@@ -4,7 +4,7 @@ import Header from './Header';
 
 const LayoutWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: ${({ theme }) => theme.layout.bgColor};
 `;
 

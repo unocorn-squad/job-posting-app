@@ -1,55 +1,68 @@
+import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 
-const StyledBox = styled.div`
+const CardWrapper = styled(Link)`
+  display: block;
+  width: 100%;
+  height: 100%;
   border-radius: 8px;
-  background-color: ${(props) => props.theme.jobCard.bgColor};
-  position: relative;
+  background-color: ${({ theme }) => theme.jobCard.bgColor};
+  text-decoration: none;
 `;
 
-const OvalBullet = styled.div`
-  font-size: ${(props) => props.theme.typography.fs175};
-  color: ${(props) => props.theme.jobCard.secondaryText.color};
-  padding-left: ${(props) => props.theme.layout.space200};
-  padding-right: ${(props) => props.theme.layout.space200};
+const LogoImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: ${({ logoBackground }) => logoBackground};
+  transform: translate(32px, -24px);
 `;
 
 const InnerBox = styled.div`
-  padding: ${(props) => props.theme.layout.space500};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: ${({ theme }) => `calc(100% - 50px - ${theme.layout.space400})`};
+  padding: ${({ theme }) =>
+    `0 ${theme.layout.space400} ${theme.layout.space400}`};
 `;
 
 const StyledTextBox = styled.div`
   display: flex;
   align-items: center;
+  gap: ${({ theme }) => theme.layout.space100};
 `;
 
-const StyledText = styled.div`
-  font-size: ${(props) => props.theme.typography.fs100};
-  font-weight: ${(props) => props.theme.typography.fwRegular};
+const StyledText = styled.p`
+  margin: 0;
   color: ${(props) => props.theme.jobCard.secondaryText.color};
-  padding-top: ${(props) => props.theme.layout.space100};
 `;
 
-const StyledTitle = styled.div`
-  font-size: ${(props) => props.theme.typography.fs125};
-  font-weight: ${(props) => props.theme.typography.fwBold};
-  padding-top: ${(props) => props.theme.layout.space300};
+const OvalBullet = styled.div`
+  font-size: ${(props) => props.theme.typography.fs175};
+  color: ${(props) => props.theme.jobCard.secondaryText.color};
 `;
 
-const StyledLocationText = styled.div`
-  padding-top: ${(props) => props.theme.layout.space300};
-  font-size: ${(props) => props.theme.typography.fs87};
-  font-weight: ${(props) => props.theme.typography.fwBold};
-  color: ${(props) => props.theme.jobCard.locationText.color};
+const StyledTitle = styled.h2`
+  ${({ theme }) => `
+    margin-top: ${theme.layout.space100};
+    margin-bottom: ${theme.layout.space100};
+    font-size: ${theme.typography.fs125};
+    color: ${theme.jobCard.title};
+  `}
 `;
 
-const LogoImage = styled.img`
-  padding: ${(props) => props.theme.layout.space300}
-    ${(props) => props.theme.layout.space100};
-  position: absolute;
-  left: 32px;
-  top: -32px;
-  background-color: ${(props) => props.logoBackground};
-  border-radius: 20px;
+const StyledLocationText = styled.p`
+  ${({ theme }) => `
+    margin-top: ${theme.layout.space400};
+    margin-bottom: 0;
+    font-size: ${theme.typography.fs87};
+    font-weight: ${theme.typography.fwBold};
+    color: ${theme.jobCard.locationText.color};
+  `}
 `;
 
 const JobCard = ({
@@ -63,29 +76,23 @@ const JobCard = ({
   jobDetailsURL,
 }) => {
   return (
-    <a href={jobDetailsURL}>
-      {
-        <StyledBox>
-          <LogoImage
-            src={logo}
-            alt={`${company} logo`}
-            logoBackground={logoBackground}
-          />
-
-          <InnerBox>
-            <StyledTextBox>
-              <StyledText>{postedAt}</StyledText>
-              <OvalBullet> . </OvalBullet>
-              <StyledText>{contract}</StyledText>
-            </StyledTextBox>
-
-            <StyledTitle>{position}</StyledTitle>
-            <StyledText>{company}</StyledText>
-            <StyledLocationText>{location}</StyledLocationText>
-          </InnerBox>
-        </StyledBox>
-      }
-    </a>
+    <CardWrapper to={jobDetailsURL}>
+      <LogoImageWrapper logoBackground={logoBackground}>
+        <img alt={`${company} logo`} src={logo} />
+      </LogoImageWrapper>
+      <InnerBox>
+        <div>
+          <StyledTextBox>
+            <StyledText>{postedAt}</StyledText>
+            <OvalBullet>&#8226;</OvalBullet>
+            <StyledText>{contract}</StyledText>
+          </StyledTextBox>
+          <StyledTitle>{position}</StyledTitle>
+          <StyledText>{company}</StyledText>
+        </div>
+        <StyledLocationText>{location}</StyledLocationText>
+      </InnerBox>
+    </CardWrapper>
   );
 };
 

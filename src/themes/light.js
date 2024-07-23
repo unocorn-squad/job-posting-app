@@ -56,7 +56,7 @@ export const theme = {
   },
   jobCard: {
     bgColor: 'var(--color-white)',
-
+    title: 'var(--color-blue-dark)',
     secondaryText: {
       color: 'var(--color-gray-dark)',
     },
@@ -86,5 +86,15 @@ export const theme = {
     description: {
       color: 'var(--color-gray-dark)',
     },
-  }
+  },
+  checkbox: {
+    bgColor: 'var(--color-gray-light)',
+    hoverBgColor: 'var(--color-gray)',
+    checkedBgColor: 'var(--color-violet)',
+    outlineColor: 'var(--color-violet)',
+
+    label: {
+      color: 'var(--color-blue-dark)',
+    },
+  },
 };
