@@ -32,15 +32,24 @@ const JobDetailDescription = styled.div`
   }
 `;
 
-const JobDetailCard = ({ job }) => {
-
+const JobDetailCard = ({
+  postedAt,
+  contract,
+  position,
+  location,
+  description,
+  requirementsContent,
+  requirementsItems,
+  roleContent,
+  roleItems,
+}) => {
   return (
     <JobDetailContainer>
       <JobDetailHeader>
         <div>
-          <div>{job.postedAt} &#8226; {job.contract}</div>
-          <JobTitle>{job.position}</JobTitle>
-          <JobLocation>{job.location}</JobLocation>
+          <div>{postedAt} &#8226; {contract}</div>
+          <JobTitle>{position}</JobTitle>
+          <JobLocation>{location}</JobLocation>
         </div>
 
         {/* TODO: Replace with button component once complete */}
@@ -49,20 +58,20 @@ const JobDetailCard = ({ job }) => {
       </JobDetailHeader>
       <JobDetailDescription>
 
-        <p>{job.description}</p>
+        <p>{description}</p>
 
         <h3>Requirements</h3>
-        <p>{job.requirements.content}</p>
+        <p>{requirementsContent}</p>
         <ul>
-          {job.requirements.items.map(item => (
+          {requirementsItems.map(item => (
             <li key={item}>{item}</li>
           ))}
         </ul>
 
         <h3>What You Will Do</h3>
-        <p>{job.role.content}</p>
+        <p>{roleContent}</p>
         <ol>
-          {job.role.items.map(item => (
+          {roleItems.map(item => (
             <li key={item}>{item}</li>
           ))}
         </ol>
