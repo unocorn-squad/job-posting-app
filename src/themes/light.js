@@ -72,6 +72,21 @@ export const theme = {
       color: '#cccccc',
     },
   },
+  jobDetailCard : {
+    bgColor: 'var(--color-white)',
+    header: {
+      color: 'var(--color-gray-dark)',
+    },
+    title: {
+      color: 'var(--color-blue-dark)',
+    },
+    location: {
+      color: 'var(--color-violet)',
+    },
+    description: {
+      color: 'var(--color-gray-dark)',
+    },
+  },
   checkbox: {
     bgColor: 'var(--color-gray-light)',
     hoverBgColor: 'var(--color-gray)',
@@ -82,7 +97,11 @@ export const theme = {
       color: 'var(--color-blue-dark)',
     },
   },
-
+  companyBioCard: {
+    bgColor: 'var(--color-white)',
+    linkColor: 'var(--color-gray-dark)',
+    linkHoverColor: 'var(--color-violet)',
+  },
   primaryButton: {
     bgColor: 'var(--color-violet)',
     hoverBgColor: 'var(--color-violet-light)',
@@ -94,5 +113,4 @@ export const theme = {
     hoverBgColor: 'rgba(89, 100, 224, 0.35)',
     color: 'var(--color-violet)',
   },
-
 };
