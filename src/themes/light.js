@@ -83,9 +83,16 @@ export const theme = {
     },
   },
 
+  primaryButton: {
+    bgColor: 'var(--color-violet)',
+    hoverBgColor: 'var(--color-violet-light)',
+    color: 'var(--color-white)',
+  },
+
   secondaryButton: {
     bgColor: 'rgba(89, 100, 224, 0.1)',
     hoverBgColor: 'rgba(89, 100, 224, 0.35)',
+    color: 'var(--color-violet)',
   },
 
 };

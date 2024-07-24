@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 
 const StyledButton = styled.button`
-  background-color: ${(props) =>  props.theme.colors.violet};
+  background-color: ${(props) => props.theme.secondaryButton.bgColor};
   border: none;
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.secondaryButton.color};
   padding: ${(props) => props.theme.layout.space200}
     ${(props) => props.theme.layout.space500};
   text-align: center;
@@ -12,12 +12,13 @@ const StyledButton = styled.button`
   cursor: pointer;
   border-radius: 5px;
 
-  &:hover {
-    background-color: ${(props) =>  props.theme.colors.lightViolet};
+  &:hover,
+  &:focus {
+    background-color: ${(props) => props.theme.secondaryButton.hoverBgColor};
   }
 `;
 
-const PrimaryButton = ({ buttonName, buttonText }) => {
+const SecondaryButton = ({ buttonName, buttonText }) => {
   return (
     <StyledButton name={buttonName}>
       {buttonText}
@@ -25,4 +26,4 @@ const PrimaryButton = ({ buttonName, buttonText }) => {
   );
 };
 
-export default PrimaryButton;
+export default SecondaryButton;
