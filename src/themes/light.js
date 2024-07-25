@@ -71,6 +71,10 @@ export const theme = {
     border: {
       color: '#cccccc',
     },
+    searchButton: {
+      bgColor: 'var(--color-violet)',
+      color: 'var(--color-white)',
+    }
   },
   jobDetailCard : {
     bgColor: 'var(--color-white)',

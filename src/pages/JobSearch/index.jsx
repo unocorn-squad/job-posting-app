@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 import jobsData from '../../assets/data.json';
 import Layout from '../../components/Layout';
+import SearchBar from '../../components/SearchBar';
 
 const JobCard = lazy(() => import('../../components/JobCard'));
 
@@ -54,7 +55,7 @@ function JobSearch() {
 
   return (
     <Layout>
-      {/* @TODO Import SearchBar component here once it's complete */}
+     <SearchBar />
       <Flex>
         <Suspense fallback={<div>Loading...</div>}>
           {jobs.map(
