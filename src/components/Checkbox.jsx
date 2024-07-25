@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 const CheckboxContainer = styled.div`
   display: none;
-
+  margin: 25px 0px 0px 20px;
   @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
     display: flex;
     gap: ${(props) => props.theme.layout.space200};
@@ -35,13 +35,12 @@ const CheckboxInput = styled.input`
 
 const CheckboxLabel = styled.label`
   display: none;
+  font-size: 16px;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
     margin: 5px 0 0 -2px;
-    font-size: 1.05rem;
     font-weight: ${(props) => props.theme.typography.fwBold};
     display: inline;
-
     span {
       display: none;
     }
