@@ -53,8 +53,6 @@ const Cube = styled.div`
   }
 `;
 
-// const TopCube = styled(Cube)``;
-
 const RightCube = styled(Cube)`
   transform: scale(1.1) rotateZ(90deg);
 
