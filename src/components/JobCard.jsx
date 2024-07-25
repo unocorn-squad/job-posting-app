@@ -8,6 +8,12 @@ const CardWrapper = styled(Link)`
   border-radius: 8px;
   background-color: ${({ theme }) => theme.jobCard.bgColor};
   text-decoration: none;
+  transition: transform ease-in-out 0.25s;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-8px);
+  }
 `;
 
 const LogoImageWrapper = styled.div`
