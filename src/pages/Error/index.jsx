@@ -1,4 +1,3 @@
-// @TODO: Uncomment SearchBar when final version is available, to allow the user to try another search directly from the error page.
 // @NOTE: Included options for a text link or a button link. Final design can use either/or.
 
 import { Link } from "react-router-dom";
@@ -10,7 +9,7 @@ import SecondaryButton from "../../components/Buttons/SecondaryButton";
 
 const StyledContainer = styled.div`
   ${({ theme }) => `
-    // margin-top: ${theme.layout.space600};
+    margin-top: ${theme.layout.space400};
     border-radius: 8px;
     padding: ${theme.layout.space500};
     background-color: ${theme.colors.white};
@@ -52,12 +51,14 @@ const StyledLink = styled(Link)`
 function Error() {
   return (
     <Layout>
-      {/* <SearchBar></SearchBar> */}
+      <SearchBar></SearchBar>
       <StyledContainer>
         <StyledHeading>404 Error</StyledHeading>
         <StyledText>Cannot find the page you're looking for.</StyledText>
         <StyledLink to="/">Return to Home</StyledLink>
+
         {/* Uncomment below to see button link option */}
+
         {/* <Link to="/">
           <SecondaryButton
             buttonName="linkHome"
