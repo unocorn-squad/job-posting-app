@@ -6,6 +6,7 @@ import styled from "@emotion/styled";
 
 import Layout from "../../components/Layout";
 import SearchBar from "../../components/SearchBar";
+import SecondaryButton from "../../components/Buttons/SecondaryButton";
 
 const StyledContainer = styled.div`
   ${({ theme }) => `
@@ -48,24 +49,6 @@ const StyledLink = styled(Link)`
   `};
 `;
 
-// Button link option. If using, replace with actual button 2 component when ready.
-const StyledButton = styled.button`
-  ${({ theme }) => `
-    border-radius: 8px;
-    border: none;
-    height: 48px;
-    width: 147px;
-    background-color: #EFF0FC;
-    font-weight: ${theme.typography.fwBold};
-    color: ${theme.colors.violet};
-
-    &:hover,
-    :focus {
-      background-color: #C5C9F4;
-    }
-  `};
-`;
-
 function Error() {
   return (
     <Layout>
@@ -76,7 +59,10 @@ function Error() {
         <StyledLink to="/">Return to Home</StyledLink>
         {/* Uncomment below to see button link option */}
         {/* <Link to="/">
-          <StyledButton>Return to Home</StyledButton>
+          <SecondaryButton
+            buttonName="linkHome"
+            buttonText="Return to Home"
+          ></SecondaryButton>
         </Link> */}
       </StyledContainer>
     </Layout>
