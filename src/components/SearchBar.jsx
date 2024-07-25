@@ -7,12 +7,20 @@ import SearchIcon from "../assets/images/icons/icon-search.svg";
 import SearchIconMobile from "../assets/images/icons/icon-search-mobile.svg";
 import FilterIcon from "../assets/images/icons/icon-filter.svg";
 import React, { useState, useEffect } from "react";
+import CardContainer from "./CardContainer";
 
 const Row = styled.div`
   display: flex;
   flex-direction: ${(props) => (props.isMobile ? "column" : "row")};
   padding-right: ${(props) =>
     props.isMobile ? "" : props.theme.layout.space300};
+`;
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: "row";
+  border-bottom: ${(props) =>
+    `0.5px solid ${props.theme.searchBar.border.color}`};
 `;
 
 const Column = styled.div`
@@ -59,13 +67,26 @@ const ButtonContainer = styled.div`
   padding-right: ${(props) => props.theme.layout.space200};
 `;
 
+const ButtonMobileContainer = styled.div`
+  padding-left: ${(props) => props.theme.layout.space200};
+  padding-top: ${(props) => props.theme.layout.space200};
+`;
+
 const SearchBar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [placeholder, setPlaceholder] = useState("Filter by title...");
   const [checkboxLabel, setCheckboxLabel] = useState("Full Time");
+  const [isCardOpen, setIsCardOpen] = useState(false);
 
+  const handleOpenCard = () => {
+    setIsCardOpen(true);
+  };
+
+  const handleCloseCard = () => {
+    setIsCardOpen(false);
+  };
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 1280px)");
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
 
     const handleMediaQueryChange = (e) => {
       if (e.matches) {
@@ -104,11 +125,26 @@ const SearchBar = () => {
             label={"Filter by title, companies, expertise"}
             isMobile={true}
           />
-          <Icon
-            src={FilterIcon}
-            alt={"Filter Icon"}
-          />
-  
+          <Icon src={FilterIcon} alt={"Filter Icon"} onClick={handleOpenCard} />
+          {isCardOpen && (
+            <CardContainer onClose={handleCloseCard}>
+              <StyledContainer>
+                <Icon src={LocationIcon} alt={"Location Icon"} />
+                <FormInput
+                  id={"filter-location"}
+                  name={"Filter Location"}
+                  placeholder={"Filter by location..."}
+                  label={"Filter by location"}
+                />
+              </StyledContainer>
+
+              <CheckBox id={"checkbox-mobile-1"} label={"Full Time Only"} />
+          
+              <ButtonMobileContainer>
+                <PrimaryButton buttonName={"search"} buttonText={"Search"} />
+              </ButtonMobileContainer>
+            </CardContainer>
+          )}
           <StyledSearchIcon src={SearchIconMobile} alt={"Search Icon"} />
         </Column>
       ) : (

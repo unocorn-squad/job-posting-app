@@ -14,6 +14,11 @@ const StyledButton = styled.button`
     background-color: ${(props) => props.theme.primaryButton.hoverBgColor};
   }
 
+  @media (min-width: ${(props) => props.theme.breakpoints.mobile_small}) {
+    padding: ${(props) => props.theme.layout.space200}
+      ${(props) => props.theme.layout.space1200};
+  }
+
   @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
     margin: 15px 0px 10px 0px;
     padding: ${(props) => props.theme.layout.space200}

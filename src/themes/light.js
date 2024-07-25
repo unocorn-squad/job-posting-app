@@ -34,6 +34,8 @@ export const theme = {
     space800: 'var(--gutter-800)',
     space900: 'var(--gutter-900)',
     space1000: 'var(--gutter-1000)',
+    space1100: 'var(--gutter-1100)',
+    space1200: 'var(--gutter-1200)',
   },
   typography: {
     familyPrimary: 'var(--font-family-primary)',
