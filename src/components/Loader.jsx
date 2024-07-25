@@ -46,7 +46,6 @@ const Cube = styled.div`
 
     90%,
     100% {
-      -webkit-transform: perspective(140px) rotateY(180deg);
       transform: perspective(140px) rotateY(180deg);
       opacity: 0;
     }
@@ -64,7 +63,7 @@ const RightCube = styled(Cube)`
 const LeftCube = styled(Cube)`
   transform: scale(1.1) rotateZ(270deg);
 
-  &::before {
+  &:before {
     animation-delay: 0.9s;
   }
 `;
