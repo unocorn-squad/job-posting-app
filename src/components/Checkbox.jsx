@@ -2,12 +2,13 @@ import { useState } from "react";
 import styled from "@emotion/styled";
 
 const CheckboxContainer = styled.div`
-  display: none;
-  margin: 25px 0px 0px 20px;
+  margin: 15px 0px 0px 20px;
+  display: flex;
+  gap: ${(props) => props.theme.layout.space200};
+  color: ${(props) => props.theme.checkbox.label.color};
+
   @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
-    display: flex;
-    gap: ${(props) => props.theme.layout.space200};
-    color: ${(props) => props.theme.checkbox.label.color};
+    margin: 25px 0px 0px 20px;
   }
 `;
 
@@ -34,32 +35,17 @@ const CheckboxInput = styled.input`
 `;
 
 const CheckboxLabel = styled.label`
-  display: none;
   font-size: 16px;
-
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
-    margin: 5px 0 0 -2px;
-    font-weight: ${(props) => props.theme.typography.fwBold};
-    display: inline;
-    span {
-      display: none;
-    }
-  }
-
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
-    span {
-      display: inline-block;
-    }
-  }
+  margin: 5px 0 0 -2px;
+  font-weight: ${(props) => props.theme.typography.fwBold};
 `;
 
 const Checkbox = ({ id, label }) => {
-  // State and handler set up for future use
   const [isChecked, setIsChecked] = useState(false);
 
-  function handleCheck() {
-    isChecked ? setIsChecked(false) : setIsChecked(true);
-  }
+  const handleCheck = () => {
+    setIsChecked((prev) => !prev);
+  };
 
   return (
     <CheckboxContainer>
@@ -69,10 +55,9 @@ const Checkbox = ({ id, label }) => {
         id={id}
         value={id}
         onChange={handleCheck}
+        checked={isChecked}
       />
-      <CheckboxLabel htmlFor={id}>
-        {label}
-      </CheckboxLabel>
+      <CheckboxLabel htmlFor={id}>{label}</CheckboxLabel>
     </CheckboxContainer>
   );
 };
