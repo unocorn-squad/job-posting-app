@@ -20,7 +20,7 @@ Inspired by [Frontend Mentor's coding challenges](https://www.frontendmentor.io/
 - Be able to click a job from the index page so that they can read more information and apply for the job;
 - **Bonus**: Have the correct color scheme chosen for them based on their computer preferences.
 
-[🚀 Live Demo](#)
+[🚀 Live Demo](https://unocorn-squad.github.io/job-posting-app/)
 
 ## Getting Started
 
