@@ -68,7 +68,7 @@ const ButtonContainer = styled.div`
 `;
 
 const ButtonMobileContainer = styled.div`
-  padding-left: ${(props) => props.theme.layout.space200};
+  padding-left: ${(props) => props.theme.layout.space300};
   padding-top: ${(props) => props.theme.layout.space200};
 `;
 
@@ -123,7 +123,7 @@ const SearchBar = () => {
             iconAltText={"Search Icon"}
             placeholder={placeholder}
             label={"Filter by title, companies, expertise"}
-            isMobile={true}
+            isMobile={isMobile}
           />
           <Icon src={FilterIcon} alt={"Filter Icon"} onClick={handleOpenCard} />
           {isCardOpen && (
@@ -141,7 +141,7 @@ const SearchBar = () => {
               <CheckBox id={"checkbox-mobile-1"} label={"Full Time Only"} />
           
               <ButtonMobileContainer>
-                <PrimaryButton buttonName={"search"} buttonText={"Search"} />
+                <PrimaryButton isMobile={isMobile} buttonName={"search"} buttonText={"Search"} />
               </ButtonMobileContainer>
             </CardContainer>
           )}

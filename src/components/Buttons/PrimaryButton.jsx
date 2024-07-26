@@ -15,8 +15,10 @@ const StyledButton = styled.button`
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.mobile_small}) {
-    padding: ${(props) => props.theme.layout.space200}
-      ${(props) => props.theme.layout.space1200};
+    padding: ${(props) =>
+      props.isMobile
+        ? `${props.theme.layout.space200} ${props.theme.layout.space1400}`
+        : ""};
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
@@ -31,8 +33,12 @@ const StyledButton = styled.button`
       ${(props) => props.theme.layout.space500};
   }
 `;
-const PrimaryButton = ({ buttonName, buttonText }) => {
-  return <StyledButton name={buttonName}>{buttonText}</StyledButton>;
+const PrimaryButton = ({ buttonName, buttonText, isMobile }) => {
+  return (
+    <StyledButton name={buttonName} isMobile={isMobile}>
+      {buttonText}
+    </StyledButton>
+  );
 };
 
 export default PrimaryButton;
