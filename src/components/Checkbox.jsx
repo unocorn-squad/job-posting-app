@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
+import checkIcon from "../assets/images/icons/icon-check.svg";
 
 const CheckboxContainer = styled.div`
   margin: 15px 0px 0px 20px;
@@ -21,6 +22,7 @@ const CheckboxInput = styled.input`
   border-radius: 3px;
   cursor: pointer;
 
+
   &:hover {
     background-color: ${(props) => props.theme.checkbox.hoverBgColor};
   }
@@ -30,7 +32,7 @@ const CheckboxInput = styled.input`
     background-size: 65%;
     background-position: center 60%;
     background-repeat: no-repeat;
-    background-image: url("/src/assets/images/icons/icon-check.svg");
+    background-image: url(${checkIcon});
   }
 `;
 
