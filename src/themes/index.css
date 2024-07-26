@@ -14,6 +14,8 @@
   --gutter-1000: calc(var(--gutter-unit-base) * 10);
   --gutter-1100: calc(var(--gutter-unit-base) * 11);
   --gutter-1200: calc(var(--gutter-unit-base) * 12);
+  --gutter-1300: calc(var(--gutter-unit-base) * 13);
+  --gutter-1400: calc(var(--gutter-unit-base) * 14);
 }
 
 body {

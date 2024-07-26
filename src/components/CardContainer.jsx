@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { createPortal } from 'react-dom';
 import styled from "@emotion/styled";
 
 const Backdrop = styled.div`
@@ -7,22 +8,20 @@ const Backdrop = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: ${(props) => props.theme.cardContainer.bgColor};
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; 
+  z-index: 1000;
 `;
 
 const Card = styled.div`
-  background: #fff;
+  background: ${(props) => props.theme.cardContainer.card.bgColor};
   border-radius: 8px;
-  width: 90%;
-  height: 6%;
-  position: absolute;
-  top: 4%; 
-  padding-top: 5px;
-  z-index: 1001; 
+  width: 85%;
+  padding-top: ${(props) => props.theme.layout.space100};
+  padding-bottom: ${(props) => props.theme.layout.space300};
+  z-index: 1001;
 `;
 
 const CardContainer = ({ onClose, children }) => {
@@ -48,17 +47,17 @@ const CardContainer = ({ onClose, children }) => {
   };
 
   const handleCardClick = (event) => {
-    event.stopPropagation(); 
+    event.stopPropagation();
   };
 
-  return (
+  return createPortal(
     <Backdrop onClick={handleBackdropClick}>
       <Card ref={cardRef} onClick={handleCardClick}>
         {children}
       </Card>
-    </Backdrop>
+    </Backdrop>,
+    document.body
   );
 };
 
 export default CardContainer;
-

@@ -36,6 +36,8 @@ export const theme = {
     space1000: 'var(--gutter-1000)',
     space1100: 'var(--gutter-1100)',
     space1200: 'var(--gutter-1200)',
+    space1300: 'var(--gutter-1300)',
+    space1400: 'var(--gutter-1400)',
   },
   typography: {
     familyPrimary: 'var(--font-family-primary)',
@@ -113,10 +115,17 @@ export const theme = {
     hoverBgColor: 'var(--color-violet-light)',
     color: 'var(--color-white)',
   },
-
   secondaryButton: {
     bgColor: 'rgba(89, 100, 224, 0.1)',
     hoverBgColor: 'rgba(89, 100, 224, 0.35)',
     color: 'var(--color-violet)',
   },
+  
+  cardContainer: {
+    bgColor: 'rgba(0, 0, 0, 0.5)',
+
+    card: {
+      bgColor: 'var(--color-white)',
+    }
+  }
 };
