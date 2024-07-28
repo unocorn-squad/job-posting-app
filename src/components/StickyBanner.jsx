@@ -1,35 +1,49 @@
 import styled from '@emotion/styled';
+import PrimaryButtonLink from './ButtonLink/PrimaryButtonLink';
 
 const StickyBannerContainer = styled.div`
-  height: 96px;
-  width: 768px;
+  height: auto;
+  width: 100%;
+  flex-grow: 3; 
+  background-color: ${({ theme }) => theme.jobCard.bgColor};
   position: absolute;
   bottom: 0;
-  right: 25%;
-  left: 50%;
-  margin-left: -384px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: ${(props) => props.theme.colors.lightGray} 1px 1px;
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
-  }
 `;
 
 const InnerBox = styled.div`
-  width: 100%;
+  width: 55%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   padding: ${(props) => props.theme.layout.space400};
+
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
+  flex-direction: row;
+  justify-content: space-between;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
+  flex-direction: row;
+  justify-content: space-between;
+  }
 `;
 
 const TextBox = styled.div`
   width: auto;
-  display: flex;
+  height: auto;
+  display: none;
   flex-direction: column;
   line-height: 10px;
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
+  display: flex;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
+  display: flex;
+  }
 `;
 
 const StyledJobTitle = styled.div`
@@ -57,19 +71,17 @@ const StyledButton = styled.div`
 `;
 
 const StickyBanner = ({ company, position, website }) => {
-  return (
-    <>
-      <StickyBannerContainer>
-        <InnerBox>
-          <TextBox>
-            <StyledJobTitle>{position}</StyledJobTitle>
-            <StyledText>{company}</StyledText>
-          </TextBox>
-          <StyledButton>Apply Now</StyledButton>
-        </InnerBox>
-      </StickyBannerContainer>
-    </>
-  );
+    return (
+        <StickyBannerContainer>
+            <InnerBox>
+                <TextBox>
+                    <StyledJobTitle>{position}</StyledJobTitle>
+                    <StyledText>{company}</StyledText>
+                </TextBox>
+                <PrimaryButtonLink>Apply Now</PrimaryButtonLink>
+            </InnerBox>
+        </StickyBannerContainer>
+    );
 };
 
 export default StickyBanner;
