@@ -16,7 +16,7 @@ const StickyBannerContainer = styled.div`
 `;
 
 const InnerBox = styled.div`
-  width: 55%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   padding: ${(props) => props.theme.layout.space400};
@@ -27,6 +27,7 @@ const InnerBox = styled.div`
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
+  width: 51%;
   flex-direction: row;
   justify-content: space-between;
   }
@@ -38,9 +39,13 @@ const TextBox = styled.div`
   display: none;
   flex-direction: column;
   line-height: 10px;
+  justify-content: space-between;
+
+
   @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
   display: flex;
   }
+
   @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
   display: flex;
   }
