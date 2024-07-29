@@ -61,10 +61,7 @@ function JobSearch() {
   const [jobs, setJobs] = useState(jobsData.slice(0, cursor));
 
   const handleLoadMore = () => {
-    // Increase the visible item count (you can adjust this logic based on your requirements)
     setCursor(prevCount => prevCount + 12);
-
-    // Update displayedData with additional items
     setJobs(jobsData.slice(0, cursor + 12));
   };
 
