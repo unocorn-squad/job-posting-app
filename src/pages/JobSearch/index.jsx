@@ -1,9 +1,10 @@
 import { lazy, Suspense, useState } from 'react';
 import styled from '@emotion/styled';
 
+import Button from '../../components/Buttons/PrimaryButton';
+
 import jobsData from '../../assets/data.json';
 import Layout from '../../components/Layout';
-import Loader from '../../components/Loader';
 
 const JobCard = lazy(() => import('../../components/JobCard'));
 
@@ -32,6 +33,12 @@ const Flex = styled.div`
   `};
 `;
 
+const InnerBox = styled.div`
+  display: flex;
+  justify-content: center;
+  text-align:center;
+`;
+
 const FlexItem = styled.div`
   ${({ theme }) => `
     width: 100%;
@@ -53,11 +60,19 @@ function JobSearch() {
   const [cursor, setCursor] = useState(12);
   const [jobs, setJobs] = useState(jobsData.slice(0, cursor));
 
+  const handleLoadMore = () => {
+    // Increase the visible item count (you can adjust this logic based on your requirements)
+    setCursor(prevCount => prevCount + 12);
+
+    // Update displayedData with additional items
+    setJobs(jobsData.slice(0, cursor + 12));
+  };
+
   return (
     <Layout>
       {/* @TODO Import SearchBar component here once it's complete */}
       <Flex>
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<div>Loading...</div>}>
           {jobs.map(
             ({
               id,
@@ -86,6 +101,12 @@ function JobSearch() {
         </Suspense>
       </Flex>
       {/* @TODO Import Button component here once it's complete */}
+      <InnerBox>
+        <Button buttonName="load-more" buttonText={"Load More"} onClick={handleLoadMore}></Button>
+      </InnerBox>
+      
+      
+
     </Layout>
   );
 }
