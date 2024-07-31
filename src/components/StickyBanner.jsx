@@ -1,92 +1,73 @@
 import styled from '@emotion/styled';
-import PrimaryButtonLink from './ButtonLink/PrimaryButtonLink';
+
+import Button from './Button';
 
 const StickyBannerContainer = styled.div`
-  height: auto;
-  width: 100%;
-  flex-grow: 3; 
-  background-color: ${({ theme }) => theme.jobCard.bgColor};
   position: absolute;
   bottom: 0;
-  margin: 0 auto;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  background-color: ${({ theme }) => theme.stickyBanner.bgColor};
   box-shadow: ${(props) => props.theme.colors.lightGray} 1px 1px;
 `;
 
 const InnerBox = styled.div`
-  width: 90%;
   display: flex;
-  flex-direction: column;
-  padding: ${(props) => props.theme.layout.space400};
-
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
-  flex-direction: row;
+  gap: ${({ theme }) => theme.layout.space200};
   justify-content: space-between;
-  }
-
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
-  width: 51%;
-  flex-direction: row;
-  justify-content: space-between;
-  }
+  width: 100%;
+  max-width: ${({ theme }) => theme.layout.maxWidth};
+  margin: 0 auto;
+  padding: ${({ theme }) => theme.layout.space400};
 `;
 
 const TextBox = styled.div`
-  width: auto;
-  height: auto;
   display: none;
-  flex-direction: column;
-  line-height: 10px;
-  justify-content: space-between;
-
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
-  display: flex;
-  }
-
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
-  display: flex;
+    display: block;
   }
 `;
 
-const StyledJobTitle = styled.div`
-  line-height: 40px;
-  font-size: ${(props) => props.theme.typography.fs125};
-  font-weight: ${(props) => props.theme.typography.fwBold};
-  color: ${(props) => props.theme.colors.black};
+const StyledJobTitle = styled.h3`
+  color: ${({ theme }) => theme.stickyBanner.title};
 `;
 
-const StyledText = styled.div`
-  font-size: ${(props) => props.theme.typography.fs100};
-  color: ${(props) => props.theme.colors.darkGray};
+const StyledText = styled.p`
+  margin: 0;
+  color: ${({ theme }) => theme.stickyBanner.text};
 `;
 
-const StyledButton = styled.div`
-  border-radius: 5px;
-  width: 141px;
-  height: 48px;
-  text-align: center;
-  line-height: 50px;
-  background-color: ${(props) => props.theme.colors.violet};
-  color: ${(props) => props.theme.colors.white};
-  font-size: ${(props) => props.theme.typography.fs100};
-  font-weight: ${(props) => props.theme.typography.fwMedium};
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
+    width: initial;
+  }
 `;
 
 const StickyBanner = ({ company, position, website }) => {
-    return (
-        <StickyBannerContainer>
-            <InnerBox>
-                <TextBox>
-                    <StyledJobTitle>{position}</StyledJobTitle>
-                    <StyledText>{company}</StyledText>
-                </TextBox>
-                <PrimaryButtonLink>Apply Now</PrimaryButtonLink>
-            </InnerBox>
-        </StickyBannerContainer>
-    );
+  return (
+    <StickyBannerContainer>
+      <InnerBox>
+        <TextBox>
+          <StyledJobTitle>{position}</StyledJobTitle>
+          <StyledText>{company}</StyledText>
+        </TextBox>
+        <ButtonContainer>
+          <Button as='a' href={website} variant='secondary'>
+            Apply Now
+          </Button>
+        </ButtonContainer>
+      </InnerBox>
+    </StickyBannerContainer>
+  );
 };
 
 export default StickyBanner;
