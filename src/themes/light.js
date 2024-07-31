@@ -54,6 +54,30 @@ export const theme = {
     fwExtraBold: 'var(--font-weight-extra-bold)',
     fwBlack: 'var(--font-weight-black)',
   },
+  primaryButton: {
+    bgColor: 'var(--color-violet)',
+    hoverBgColor: 'var(--color-violet-light)',
+    color: 'var(--color-white)',
+  },
+  secondaryButton: {
+    bgColor: 'rgba(89, 100, 224, 0.1)',
+    hoverBgColor: 'rgba(89, 100, 224, 0.35)',
+    color: 'var(--color-violet)',
+  },
+  checkbox: {
+    bgColor: 'var(--color-gray-light)',
+    hoverBgColor: 'var(--color-gray)',
+    checkedBgColor: 'var(--color-violet)',
+    outlineColor: 'var(--color-violet)',
+    label: {
+      color: 'var(--color-blue-dark)',
+    },
+  },
+  companyBioCard: {
+    bgColor: 'var(--color-white)',
+    linkColor: 'var(--color-gray-dark)',
+    linkHoverColor: 'var(--color-violet)',
+  },
   jobCard: {
     bgColor: 'var(--color-white)',
     title: 'var(--color-blue-dark)',
@@ -67,12 +91,7 @@ export const theme = {
       color: 'var(--color-violet)',
     },
   },
-  searchBar: {
-    border: {
-      color: '#cccccc',
-    },
-  },
-  jobDetailCard : {
+  jobDetailCard: {
     bgColor: 'var(--color-white)',
     header: {
       color: 'var(--color-gray-dark)',
@@ -87,30 +106,14 @@ export const theme = {
       color: 'var(--color-gray-dark)',
     },
   },
-  checkbox: {
-    bgColor: 'var(--color-gray-light)',
-    hoverBgColor: 'var(--color-gray)',
-    checkedBgColor: 'var(--color-violet)',
-    outlineColor: 'var(--color-violet)',
-
-    label: {
-      color: 'var(--color-blue-dark)',
+  searchBar: {
+    border: {
+      color: '#cccccc',
     },
   },
-  companyBioCard: {
+  stickyBanner: {
     bgColor: 'var(--color-white)',
-    linkColor: 'var(--color-gray-dark)',
-    linkHoverColor: 'var(--color-violet)',
-  },
-  primaryButton: {
-    bgColor: 'var(--color-violet)',
-    hoverBgColor: 'var(--color-violet-light)',
-    color: 'var(--color-white)',
-  },
-
-  secondaryButton: {
-    bgColor: 'rgba(89, 100, 224, 0.1)',
-    hoverBgColor: 'rgba(89, 100, 224, 0.35)',
-    color: 'var(--color-violet)',
+    title: 'var(--color-black)',
+    text: 'var(--color-gray-dark)',
   },
 };
