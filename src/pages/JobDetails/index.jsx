@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 
 import jobsData from '../../assets/data.json';
 import Layout from '../../components/Layout';
+import StickyBanner from '../../components/StickyBanner';
 
 function JobDetails() {
   const { jobId } = useParams();
@@ -21,8 +22,13 @@ function JobDetails() {
     role,
   } = jobsData[jobId - 1];
 
-  // @TODO Replace the placeholder content with appropriate components when they are complete.
-  return <Layout>Job Details Placeholder</Layout>;
+  return (
+    <>
+      {/* @TODO Replace the placeholder content with appropriate components when they are complete. */}
+      <Layout>Job Details Placeholder</Layout>
+      <StickyBanner company={company} position={position} website={website} />
+    </>
+  );
 }
 
 export default JobDetails;

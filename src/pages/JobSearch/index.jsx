@@ -5,6 +5,8 @@ import Button from '../../components/Buttons/PrimaryButton';
 
 import jobsData from '../../assets/data.json';
 import Layout from '../../components/Layout';
+import SearchBar from '../../components/SearchBar';
+import Loader from '../../components/Loader';
 
 const JobCard = lazy(() => import('../../components/JobCard'));
 
@@ -36,7 +38,7 @@ const Flex = styled.div`
 const InnerBox = styled.div`
   display: flex;
   justify-content: center;
-  text-align:center;
+  text-align: center;
 `;
 
 const FlexItem = styled.div`
@@ -61,15 +63,15 @@ function JobSearch() {
   const [jobs, setJobs] = useState(jobsData.slice(0, cursor));
 
   const handleLoadMore = () => {
-    setCursor(prevCount => prevCount + 12);
+    setCursor((prevCount) => prevCount + 12);
     setJobs(jobsData.slice(0, cursor + 12));
   };
 
   return (
     <Layout>
-      {/* @TODO Import SearchBar component here once it's complete */}
+      <SearchBar />
       <Flex>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader />}>
           {jobs.map(
             ({
               id,
@@ -99,11 +101,11 @@ function JobSearch() {
       </Flex>
       {/* @TODO Import Button component here once it's complete */}
       <InnerBox>
-        <Button buttonName="load-more" buttonText={"Load More"} onClick={handleLoadMore}></Button>
+        <Button
+          buttonName='load-more'
+          buttonText={'Load More'}
+          onClick={handleLoadMore}></Button>
       </InnerBox>
-      
-      
-
     </Layout>
   );
 }
