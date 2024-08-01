@@ -1,29 +1,22 @@
 import styled from '@emotion/styled';
 
-// const StyledContainer = styled.div`
-//   display: flex;
-//   flex-direction: 'row';
-//   border-bottom: ${(props) =>
-//     `0.5px solid ${props.theme.searchBar.border.color}`};
-// `;
+import SearchIcon from '../../assets/images/icons/icon-search.svg?react';
 
 export const Row = styled.div`
   display: flex;
-  flex-direction: column;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet_small}) {
-    flex-direction: row;
-  }
+  flex-direction: row;
 `;
 
 export const Column = styled.div`
   ${({
-    borderLeft,
+    borderTop,
     borderRight,
-    borderBottomLeftRadius,
-    borderBottomRightRadius,
+    borderBottom,
+    borderLeft,
     borderTopLeftRadius,
     borderTopRightRadius,
+    borderBottomLeftRadius,
+    borderBottomRightRadius,
     theme,
   }) => `
     display: flex;
@@ -33,14 +26,25 @@ export const Column = styled.div`
     border-bottom-left-radius: ${borderBottomLeftRadius || '0'};
     border-top-right-radius: ${borderTopRightRadius || '0'};
     border-bottom-right-radius: ${borderBottomRightRadius || '0'};
+    border-top: ${
+      borderTop ? `0.5px solid ${theme.searchBar.border.color}` : '0'
+    };
+     border-right: ${
+       borderRight ? `0.5px solid ${theme.searchBar.border.color}` : '0'
+     };
+    border-bottom: ${
+      borderBottom ? `0.5px solid ${theme.searchBar.border.color}` : '0'
+    };
     border-left: ${
       borderLeft ? `0.5px solid ${theme.searchBar.border.color}` : '0'
     };
-    border-right: ${
-      borderRight ? `0.5px solid ${theme.searchBar.border.color}` : '0'
-    };
-    padding: ${theme.layout.space200};
+    padding: ${theme.layout.space200} ${theme.layout.space300};
     overflow: hidden;
+
+   @media (min-width: ${theme.breakpoints.tablet_small}) {
+      padding-right: ${theme.layout.space200};
+      padding-left: ${theme.layout.space200};
+    }
 
     @media (min-width: ${theme.breakpoints.tablet_large}) {
       padding-right: ${theme.layout.space300};
@@ -49,23 +53,30 @@ export const Column = styled.div`
   `}
 `;
 
-export const FilterColumn = styled(Column)`
+export const StatusFilterColumn = styled(Column)`
   ${({ tsWidth, tmWidth, theme }) => `
-  @media (min-width: ${theme.breakpoints.tablet_small}) {
-    min-width: ${tsWidth}
-  }
+    align-items: center;
+    justify-content: space-between;
+    gap: ${theme.layout.space200};
 
-  @media (min-width: ${theme.breakpoints.tablet_medium}) {
-    min-width: ${tmWidth}
-  }
-`}
+    @media (min-width: ${theme.breakpoints.tablet_small}) {
+      min-width: ${tsWidth}
+    }
 
-  align-items: center;
-  justify-content: space-between;
-  gap: ${({ theme }) => theme.layout.space200};
+    @media (min-width: ${theme.breakpoints.tablet_medium}) {
+      min-width: ${tmWidth}
+    }
+  `}
 `;
 
-export const MobileHiddenText = styled.span`
+export const ModalColumn = styled(Column)`
+  flex-direction: column;
+  width: initial;
+  padding: ${({ theme }) =>
+    `${theme.layout.space400} ${theme.layout.space300}`};
+`;
+
+export const HideMobileOnly = styled.span`
   display: none;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet_medium}) {
@@ -73,7 +84,24 @@ export const MobileHiddenText = styled.span`
   }
 `;
 
-// const ButtonMobileContainer = styled.div`
-//   padding-left: ${(props) => props.theme.layout.space300};
-//   padding-top: ${(props) => props.theme.layout.space200};
-// `;
+export const MobileSearchIcon = styled(SearchIcon)`
+  path {
+    fill: ${({ theme }) => theme.colors.white};
+  }
+`;
+
+export const ModalButton = styled.button`
+  border: 0;
+  outline: 0;
+  background: none;
+  margin-right: ${({ theme }) => theme.layout.space100};
+  padding: ${({ theme }) => theme.layout.space200};
+  cursor: pointer;
+`;
+
+export const ModalButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: ${({ theme }) => theme.layout.space200};
+`;
