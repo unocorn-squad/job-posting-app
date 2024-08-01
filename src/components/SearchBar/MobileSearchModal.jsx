@@ -12,7 +12,7 @@ const ModalBackdrop = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background: ${({ theme }) => theme.cardContainer.bgColor};
+  background: ${({ theme }) => theme.searchModal.bgColor};
   z-index: 10;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet_small}) {

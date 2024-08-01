@@ -77,12 +77,6 @@ export const theme = {
       color: 'var(--color-blue-dark)',
     },
   },
-  cardContainer: {
-    bgColor: 'rgba(0, 0, 0, 0.5)',
-    card: {
-      bgColor: 'var(--color-white)',
-    },
-  },
   companyBioCard: {
     bgColor: 'var(--color-white)',
     linkColor: 'var(--color-gray-dark)',
@@ -115,6 +109,9 @@ export const theme = {
     description: {
       color: 'var(--color-gray-dark)',
     },
+  },
+  searchModal: {
+    bgColor: 'rgba(0, 0, 0, 0.5)',
   },
   searchBar: {
     border: {
