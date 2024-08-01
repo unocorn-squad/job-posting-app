@@ -39,11 +39,11 @@ const FlexItem = styled.div`
     align-self: stretch;
 
     @media (min-width: ${theme.breakpoints.tablet_small}) {
-      width: calc(50% - ${theme.layout.space200});
+      width: calc(50% - ${theme.layout.space100});
     }
 
     @media (min-width: ${theme.breakpoints.tablet_large}) {
-      width: calc((100% / 3) - ${theme.layout.space300});
+      width: calc((100% / 3) - ${theme.layout.space200});
     }
   `};
 `;

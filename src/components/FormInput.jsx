@@ -19,7 +19,7 @@ const Input = styled.input`
   outline: none;
   padding: 0;
   overflow: hidden;
-  font-size: ${({ theme }) => theme.typography.fs112};
+  font-size: ${({ theme }) => theme.typography.fs100};
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
