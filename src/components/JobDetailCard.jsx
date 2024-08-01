@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Button from './Button';
 
 const JobDetailContainer = styled.div`
   padding: ${props => props.theme.layout.space500};
@@ -16,8 +17,8 @@ const JobDetailHeader = styled.div`
 
 const JobTitle = styled.h1`
   color: ${props => props.theme.jobDetailCard.title.color};
-  margin-top: ${props => props.theme.layout.space50};
-  margin-bottom: ${props => props.theme.layout.space100};
+  margin-top: ${props => props.theme.layout.space100};
+  margin-bottom: ${props => props.theme.layout.space200};
 `;
 
 const JobLocation = styled.div`
@@ -37,12 +38,14 @@ const JobDetailCard = ({
   contract,
   position,
   location,
+  apply,
   description,
   requirementsContent,
   requirementsItems,
   roleContent,
   roleItems,
 }) => {
+  console.log(apply)
   return (
     <JobDetailContainer>
       <JobDetailHeader>
@@ -51,10 +54,7 @@ const JobDetailCard = ({
           <JobTitle>{position}</JobTitle>
           <JobLocation>{location}</JobLocation>
         </div>
-
-        {/* TODO: Replace with button component once complete */}
-        <button>Apply Now</button>
-
+        <Button as='a' href={apply} variant='primary'>Apply Now</Button>
       </JobDetailHeader>
       <JobDetailDescription>
 
