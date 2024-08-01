@@ -1,12 +1,11 @@
 import { lazy, Suspense, useState } from 'react';
 import styled from '@emotion/styled';
 
-import Button from '../../components/Buttons/PrimaryButton';
-
 import jobsData from '../../assets/data.json';
+import Button from '../../components/Button';
 import Layout from '../../components/Layout';
-import SearchBar from '../../components/SearchBar';
 import Loader from '../../components/Loader';
+import SearchBar from '../../components/SearchBar';
 
 const JobCard = lazy(() => import('../../components/JobCard'));
 
@@ -99,12 +98,8 @@ function JobSearch() {
           )}
         </Suspense>
       </Flex>
-      {/* @TODO Import Button component here once it's complete */}
       <InnerBox>
-        <Button
-          buttonName='load-more'
-          buttonText={'Load More'}
-          onClick={handleLoadMore}></Button>
+        <Button onClick={handleLoadMore}>Load More</Button>
       </InnerBox>
     </Layout>
   );
