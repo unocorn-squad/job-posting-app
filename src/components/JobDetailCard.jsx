@@ -11,9 +11,26 @@ const JobDetailContainer = styled.div`
 const JobDetailHeader = styled.div`
   color: ${props => props.theme.jobDetailCard.header.color};
   display: flex;
-  align-items: center;  
+  flex-direction: column;
   justify-content: space-between;
+
+  @media (min-width: ${props => props.theme.breakpoints.tablet_small}) {
+    flex-direction: row;
+    align-items: center; 
+  }
 `;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: ${props => props.theme.layout.space400};
+
+  @media (min-width: ${props => props.theme.breakpoints.tablet_small}) {
+    width: initial;
+    margin-top: 0;
+  }
+`
 
 const JobTitle = styled.h1`
   color: ${props => props.theme.jobDetailCard.title.color};
@@ -54,7 +71,9 @@ const JobDetailCard = ({
           <JobTitle>{position}</JobTitle>
           <JobLocation>{location}</JobLocation>
         </div>
-        <Button as='a' href={apply} variant='primary'>Apply Now</Button>
+        <ButtonContainer>
+          <Button as='a' href={apply} variant='primary'>Apply Now</Button>
+        </ButtonContainer>
       </JobDetailHeader>
       <JobDetailDescription>
 
