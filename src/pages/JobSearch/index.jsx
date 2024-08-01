@@ -56,7 +56,7 @@ function JobSearch() {
 
   return (
     <Layout>
-     <SearchBar />
+      <SearchBar />
       <Flex>
         <Suspense fallback={<Loader />}>
           {jobs.map(

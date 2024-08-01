@@ -1,6 +1,6 @@
-import { useState } from "react";
-import styled from "@emotion/styled";
-import checkIcon from "../assets/images/icons/icon-check.svg";
+import { useState } from 'react';
+import styled from '@emotion/styled';
+import checkIcon from '../assets/images/icons/icon-check.svg';
 
 const CheckboxContainer = styled.div`
   margin: 15px 0px 0px 20px;
@@ -21,7 +21,6 @@ const CheckboxInput = styled.input`
   appearance: none;
   border-radius: 3px;
   cursor: pointer;
-
 
   &:hover {
     background-color: ${(props) => props.theme.checkbox.hoverBgColor};
@@ -52,7 +51,7 @@ const Checkbox = ({ id, label }) => {
   return (
     <CheckboxContainer>
       <CheckboxInput
-        type="checkbox"
+        type='checkbox'
         name={id}
         id={id}
         value={id}

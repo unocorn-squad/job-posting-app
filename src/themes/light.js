@@ -58,6 +58,36 @@ export const theme = {
     fwExtraBold: 'var(--font-weight-extra-bold)',
     fwBlack: 'var(--font-weight-black)',
   },
+  primaryButton: {
+    bgColor: 'var(--color-violet)',
+    hoverBgColor: 'var(--color-violet-light)',
+    color: 'var(--color-white)',
+  },
+  secondaryButton: {
+    bgColor: 'rgba(89, 100, 224, 0.1)',
+    hoverBgColor: 'rgba(89, 100, 224, 0.35)',
+    color: 'var(--color-violet)',
+  },
+  checkbox: {
+    bgColor: 'var(--color-gray-light)',
+    hoverBgColor: 'var(--color-gray)',
+    checkedBgColor: 'var(--color-violet)',
+    outlineColor: 'var(--color-violet)',
+    label: {
+      color: 'var(--color-blue-dark)',
+    },
+  },
+  cardContainer: {
+    bgColor: 'rgba(0, 0, 0, 0.5)',
+    card: {
+      bgColor: 'var(--color-white)',
+    },
+  },
+  companyBioCard: {
+    bgColor: 'var(--color-white)',
+    linkColor: 'var(--color-gray-dark)',
+    linkHoverColor: 'var(--color-violet)',
+  },
   jobCard: {
     bgColor: 'var(--color-white)',
     title: 'var(--color-blue-dark)',
@@ -71,16 +101,7 @@ export const theme = {
       color: 'var(--color-violet)',
     },
   },
-  searchBar: {
-    border: {
-      color: '#cccccc',
-    },
-    searchButton: {
-      bgColor: 'var(--color-violet)',
-      color: 'var(--color-white)',
-    }
-  },
-  jobDetailCard : {
+  jobDetailCard: {
     bgColor: 'var(--color-white)',
     header: {
       color: 'var(--color-gray-dark)',
@@ -95,37 +116,23 @@ export const theme = {
       color: 'var(--color-gray-dark)',
     },
   },
-  checkbox: {
-    bgColor: 'var(--color-gray-light)',
-    hoverBgColor: 'var(--color-gray)',
-    checkedBgColor: 'var(--color-violet)',
-    outlineColor: 'var(--color-violet)',
-
-    label: {
-      color: 'var(--color-blue-dark)',
+  searchBar: {
+    border: {
+      color: '#cccccc',
+    },
+    searchButton: {
+      bgColor: 'var(--color-violet)',
+      color: 'var(--color-white)',
     },
   },
-  companyBioCard: {
+  stickyBanner: {
     bgColor: 'var(--color-white)',
-    linkColor: 'var(--color-gray-dark)',
-    linkHoverColor: 'var(--color-violet)',
+    title: 'var(--color-black)',
+    text: 'var(--color-gray-dark)',
   },
-  primaryButton: {
-    bgColor: 'var(--color-violet)',
-    hoverBgColor: 'var(--color-violet-light)',
-    color: 'var(--color-white)',
+  errorPage: {
+    bgColor: 'var(--color-white)',
+    title: 'var(--color-blue-dark)',
+    text: 'var(--color-gray-dark)',
   },
-  secondaryButton: {
-    bgColor: 'rgba(89, 100, 224, 0.1)',
-    hoverBgColor: 'rgba(89, 100, 224, 0.35)',
-    color: 'var(--color-violet)',
-  },
-  
-  cardContainer: {
-    bgColor: 'rgba(0, 0, 0, 0.5)',
-
-    card: {
-      bgColor: 'var(--color-white)',
-    }
-  }
 };
