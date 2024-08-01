@@ -1,9 +1,14 @@
 import LocationIcon from '../../assets/images/icons/icon-location.svg?react';
 import SearchIcon from '../../assets/images/icons/icon-search.svg?react';
-import { Column, FilterColumn, MobileHiddenText, Row } from './StyledSearchBar';
 import Button from '../Button';
 import CheckBox from '../Checkbox';
 import FormInput from '../FormInput';
+import {
+  Column,
+  HideMobileOnly,
+  Row,
+  StatusFilterColumn,
+} from './StyledSearchBar';
 
 const DesktopSearchBar = ({
   location,
@@ -41,7 +46,7 @@ const DesktopSearchBar = ({
           onChange={onChangeByLocation}
         />
       </Column>
-      <FilterColumn
+      <StatusFilterColumn
         borderTopRightRadius='8px'
         borderBottomRightRadius='8px'
         tsWidth='220px'
@@ -51,10 +56,10 @@ const DesktopSearchBar = ({
           id='checkbox-1'
           value={status}
           onChange={onChangeByStatus}>
-          Full-time <MobileHiddenText>Only</MobileHiddenText>
+          Full-time <HideMobileOnly>Only</HideMobileOnly>
         </CheckBox>
         <Button onClick={onSearch}>Search</Button>
-      </FilterColumn>
+      </StatusFilterColumn>
     </Row>
   );
 };
