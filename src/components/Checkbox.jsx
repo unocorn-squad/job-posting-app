@@ -1,16 +1,12 @@
 import { useState } from 'react';
 import styled from '@emotion/styled';
+
 import checkIcon from '../assets/images/icons/icon-check.svg';
 
 const CheckboxContainer = styled.div`
-  margin: 15px 0px 0px 20px;
   display: flex;
+  align-items: center;
   gap: ${(props) => props.theme.layout.space200};
-  color: ${(props) => props.theme.checkbox.label.color};
-
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
-    margin: 25px 0px 0px 20px;
-  }
 `;
 
 const CheckboxInput = styled.input`
@@ -22,7 +18,8 @@ const CheckboxInput = styled.input`
   border-radius: 3px;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: ${(props) => props.theme.checkbox.hoverBgColor};
   }
 
@@ -36,29 +33,23 @@ const CheckboxInput = styled.input`
 `;
 
 const CheckboxLabel = styled.label`
-  font-size: 16px;
-  margin: 5px 0 0 -2px;
+  font-size: ${(props) => props.theme.typography.fs100};
   font-weight: ${(props) => props.theme.typography.fwBold};
+  cursor: pointer;
 `;
 
-const Checkbox = ({ id, label }) => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleCheck = () => {
-    setIsChecked((prev) => !prev);
-  };
-
+const Checkbox = ({ checked, id, value, onChange, children }) => {
   return (
     <CheckboxContainer>
       <CheckboxInput
-        type='checkbox'
-        name={id}
+        checked={checked}
         id={id}
-        value={id}
-        onChange={handleCheck}
-        checked={isChecked}
+        name={id}
+        type='checkbox'
+        value={value}
+        onChange={onChange}
       />
-      <CheckboxLabel htmlFor={id}>{label}</CheckboxLabel>
+      <CheckboxLabel htmlFor={id}>{children}</CheckboxLabel>
     </CheckboxContainer>
   );
 };
