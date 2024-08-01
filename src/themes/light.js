@@ -22,7 +22,7 @@ export const theme = {
   },
   layout: {
     bgColor: 'var(--color-gray-light)',
-    maxWidth: '1024px',
+    maxWidth: '1280px',
     space50: 'var(--gutter-50)',
     space100: 'var(--gutter-100)',
     space200: 'var(--gutter-200)',
