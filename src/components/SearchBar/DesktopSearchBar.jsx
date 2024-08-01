@@ -30,7 +30,7 @@ const DesktopSearchBar = ({
           id='search-title'
           label='Filter by title, companies, expertise'
           name='search-title'
-          placeholder='Filter by title, companies, expertise'
+          placeholder='Filter by title, companies, expertise...'
           value={title}
           onChange={onChangeByTitle}
         />
@@ -41,7 +41,7 @@ const DesktopSearchBar = ({
           id='filter-location'
           label='Filter by location'
           name='filter-location'
-          placeholder='Filter by location'
+          placeholder='Filter by location...'
           value={location}
           onChange={onChangeByLocation}
         />
