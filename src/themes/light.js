@@ -110,10 +110,19 @@ export const theme = {
     border: {
       color: '#cccccc',
     },
+    searchButton: {
+      bgColor: 'var(--color-violet)',
+      color: 'var(--color-white)',
+    },
   },
   stickyBanner: {
     bgColor: 'var(--color-white)',
     title: 'var(--color-black)',
+    text: 'var(--color-gray-dark)',
+  },
+  errorPage: {
+    bgColor: 'var(--color-white)',
+    title: 'var(--color-blue-dark)',
     text: 'var(--color-gray-dark)',
   },
 };
