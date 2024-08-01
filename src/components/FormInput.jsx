@@ -1,27 +1,22 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 const Input = styled.input`
   border: none;
   outline: none;
   flex-grow: 1;
+  padding-left: ${(props) => (props.isMobile ?  props.theme.layout.space400 :"")};
 `;
 
-const Icon = styled.img`
-  padding: ${(props) => props.theme.layout.space200};
-`;
-
-const FormInput = ({ icon, id, iconAltText, placeholder, name, label }) => {
+const FormInput = ({ id, placeholder, name, label, isMobile }) => {
   return (
-    <>
-      <Icon src={icon} alt={iconAltText} />
-      <Input
-        type='text'
-        id={id}
-        placeholder={placeholder}
-        name={name}
-        aria-label={label}
-      />
-    </>
+    <Input
+      type="text"
+      id={id}
+      placeholder={placeholder}
+      name={name}
+      aria-label={label}
+      isMobile={isMobile}
+    />
   );
 };
 
