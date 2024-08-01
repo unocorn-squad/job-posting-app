@@ -120,4 +120,9 @@ export const theme = {
     title: 'var(--color-black)',
     text: 'var(--color-gray-dark)',
   },
+  errorPage: {
+    bgColor: 'var(--color-white)',
+    title: 'var(--color-blue-dark)',
+    text: 'var(--color-gray-dark)',
+  },
 };
