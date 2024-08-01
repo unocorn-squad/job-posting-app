@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import Button from './Button';
 
 const StickyBannerContainer = styled.div`
-  position: absolute;
+  position: sticky;
   bottom: 0;
   left: 0;
   display: flex;
