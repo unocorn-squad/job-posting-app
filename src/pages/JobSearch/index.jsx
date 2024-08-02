@@ -2,9 +2,10 @@ import { lazy, Suspense, useState } from 'react';
 import styled from '@emotion/styled';
 
 import jobsData from '../../assets/data.json';
+import Button from '../../components/Button';
 import Layout from '../../components/Layout';
-import SearchBar from '../../components/SearchBar';
 import Loader from '../../components/Loader';
+import SearchBar from '../../components/SearchBar';
 
 const JobCard = lazy(() => import('../../components/JobCard'));
 
@@ -33,6 +34,12 @@ const Flex = styled.div`
   `};
 `;
 
+const InnerBox = styled.div`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+`;
+
 const FlexItem = styled.div`
   ${({ theme }) => `
     width: 100%;
@@ -53,6 +60,11 @@ function JobSearch() {
   // This is used to determine next result items to show when the user clicks "Load More" button.
   const [cursor, setCursor] = useState(12);
   const [jobs, setJobs] = useState(jobsData.slice(0, cursor));
+
+  const handleLoadMore = () => {
+    setJobs((prevJobs) => [...prevJobs, ...jobsData.slice(cursor, cursor + 6)]);
+    setCursor((prevCount) => prevCount + 6);
+  };
 
   return (
     <Layout>
@@ -86,7 +98,18 @@ function JobSearch() {
           )}
         </Suspense>
       </Flex>
-      {/* @TODO Import Button component here once it's complete */}
+
+      <InnerBox>
+
+        {cursor < (jobsData.length - 1) &&
+
+          <Button onClick={handleLoadMore}>Load More</Button>
+
+        }
+
+
+      </InnerBox>
+
     </Layout>
   );
 }
