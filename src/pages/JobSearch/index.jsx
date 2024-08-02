@@ -60,10 +60,11 @@ function JobSearch() {
   // This is used to determine next result items to show when the user clicks "Load More" button.
   const [cursor, setCursor] = useState(12);
   const [jobs, setJobs] = useState(jobsData.slice(0, cursor));
+  console.log(cursor);
 
   const handleLoadMore = () => {
-    setCursor((prevCount) => prevCount + 12);
-    setJobs(jobsData.slice(0, cursor + 12));
+    setJobs((prevJobs) => [...prevJobs, ...jobsData.slice(cursor, cursor + 6)]);
+    setCursor((prevCount) => prevCount + 6);
   };
 
   return (
@@ -98,9 +99,18 @@ function JobSearch() {
           )}
         </Suspense>
       </Flex>
+
       <InnerBox>
-        <Button onClick={handleLoadMore}>Load More</Button>
+
+        {cursor < (jobsData.length - 1) &&
+
+          <Button onClick={handleLoadMore}>Load More</Button>
+
+        }
+
+
       </InnerBox>
+
     </Layout>
   );
 }
