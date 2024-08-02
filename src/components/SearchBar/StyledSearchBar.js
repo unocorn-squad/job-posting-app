@@ -92,7 +92,6 @@ export const MobileSearchIcon = styled(SearchIcon)`
 
 export const ModalButton = styled.button`
   border: 0;
-  outline: 0;
   background: none;
   margin-right: ${({ theme }) => theme.layout.space100};
   padding: ${({ theme }) => theme.layout.space200};
