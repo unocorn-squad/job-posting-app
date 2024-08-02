@@ -9,7 +9,7 @@ const StyledButton = styled.button`
     };
     border: 0;
     border-radius: 5px;
-    padding: ${theme.layout.space200} ${theme.layout.space500};
+    padding: ${theme.layout.space200};
     color:  ${
       variant === 'primary'
         ? theme.primaryButton.color
@@ -30,14 +30,27 @@ const StyledButton = styled.button`
           : theme.secondaryButton.hoverBgColor
       };
     }
+
+    @media (min-width: ${theme.breakpoints.tablet_medium}) {
+      padding-right: ${theme.layout.space500};
+      padding-left: ${theme.layout.space500};
+    }
   `};
 `;
 
-const Button = ({ as, href, onClick, variant = 'primary', children }) => {
+const Button = ({
+  as,
+  ariaLabel = '',
+  href,
+  onClick,
+  variant = 'primary',
+  children,
+}) => {
   if (as === 'a') {
     return (
       <StyledButton
         as={as}
+        aria-label={ariaLabel}
         href={href}
         target='_blank'
         rel='noreferrer'
@@ -48,7 +61,11 @@ const Button = ({ as, href, onClick, variant = 'primary', children }) => {
   }
 
   return (
-    <StyledButton type='button' onClick={onClick} variant={variant}>
+    <StyledButton
+      aria-label={ariaLabel}
+      type='button'
+      onClick={onClick}
+      variant={variant}>
       {children}
     </StyledButton>
   );
