@@ -1,13 +1,13 @@
-import { lazy, Suspense, useState } from 'react';
-import styled from '@emotion/styled';
+import { lazy, Suspense, useState } from "react";
+import styled from "@emotion/styled";
 
-import jobsData from '../../assets/data.json';
-import Button from '../../components/Button';
-import Layout from '../../components/Layout';
-import Loader from '../../components/Loader';
-import SearchBar from '../../components/SearchBar';
+import jobsData from "../../assets/data.json";
+import Button from "../../components/Button";
+import Layout from "../../components/Layout";
+import Loader from "../../components/Loader";
+import SearchBar from "../../components/SearchBar";
 
-const JobCard = lazy(() => import('../../components/JobCard'));
+const JobCard = lazy(() => import("../../components/JobCard"));
 
 const Flex = styled.div`
   ${({ theme }) => `
@@ -60,7 +60,7 @@ function JobSearch() {
   // This is used to determine next result items to show when the user clicks "Load More" button.
   const [cursor, setCursor] = useState(12);
   const [jobs, setJobs] = useState(jobsData.slice(0, cursor));
-  const [filteredJobs, setFilteredJobs] = useState(jobsData);
+  const [filteredJobs, setFilteredJobs] = useState(jobs);
 
   const handleSearch = (filteredJobs) => {
     setFilteredJobs(filteredJobs);
@@ -73,11 +73,11 @@ function JobSearch() {
 
   return (
     <Layout>
-      <SearchBar onSearch={handleSearch} />
+      <SearchBar onSearch={handleSearch} jobs={jobs} />
       <Flex>
         <Suspense fallback={<Loader />}>
           {filteredJobs.length === 0
-            ? 'No results found'
+            ? "No results found"
             : filteredJobs.map(
                 ({
                   id,

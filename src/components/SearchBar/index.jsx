@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import styled from '@emotion/styled';
+import { useState } from "react";
+import styled from "@emotion/styled";
 
-import DesktopSearchBar from './DesktopSearchBar';
-import MobileSearchBar from './MobileSearchBar';
-import jobsData from '../../assets/data.json';
+import DesktopSearchBar from "./DesktopSearchBar";
+import MobileSearchBar from "./MobileSearchBar";
 
 const MobileSearchBarContainer = styled.div`
   ${({ theme }) => `
@@ -23,10 +22,10 @@ const DesktopSearchBarContainer = styled.div`
   `};
 `;
 
-function SearchBar({ onSearch }) {
-  const [location, setLocation] = useState('');
+function SearchBar({ onSearch, jobs }) {
+  const [location, setLocation] = useState("");
   const [status, setStatus] = useState(false);
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState("");
 
   const handleOnChangeByLocation = (e) => setLocation(e.target.value);
 
@@ -35,9 +34,9 @@ function SearchBar({ onSearch }) {
   const handleOnChangeByTitle = (e) => setTitle(e.target.value);
 
   const handleOnSearch = () => {
-    const filtered = jobsData.filter((job) => {
-      const jobPosition = job.position ? job.position.toLowerCase() : '';
-      const jobLocation = job.location ? job.location.toLowerCase() : '';
+    const filtered = jobs.filter((job) => {
+      const jobPosition = job.position ? job.position.toLowerCase() : "";
+      const jobLocation = job.location ? job.location.toLowerCase() : "";
       const matchesTitle = title
         ? jobPosition.includes(title.toLowerCase())
         : true;
@@ -58,8 +57,8 @@ function SearchBar({ onSearch }) {
     <form onSubmit={handleOnFormSubmit}>
       <DesktopSearchBarContainer>
         <DesktopSearchBar
-          aria-label='Desktop Search Jobs'
-          aria-labelledby='desktop-search-bar-label'
+          aria-label="Desktop Search Jobs"
+          aria-labelledby="desktop-search-bar-label"
           location={location}
           status={status}
           title={title}
@@ -71,8 +70,8 @@ function SearchBar({ onSearch }) {
       </DesktopSearchBarContainer>
       <MobileSearchBarContainer>
         <MobileSearchBar
-          aria-label='Mobile Search Jobs'
-          aria-labelledby='mobile-search-bar-label'
+          aria-label="Mobile Search Jobs"
+          aria-labelledby="mobile-search-bar-label"
           location={location}
           status={status}
           title={title}
