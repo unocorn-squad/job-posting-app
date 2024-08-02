@@ -22,8 +22,7 @@ function MobileSearchBar({
   onChangeByLocation,
   onChangeByStatus,
   onChangeByTitle,
-  //onSearch,
-  onClick,
+  onSearch,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -33,7 +32,7 @@ function MobileSearchBar({
 
   const handleModalOnSearch = () => {
     // @TODO Uncomment this line once search functionality is implemented.
-    onClick();
+    onSearch();
     toggleModalDisplay();
   };
 
@@ -60,7 +59,7 @@ function MobileSearchBar({
           >
             <FilterIcon />
           </ModalButton>
-          <Button ariaLabel="Search" onClick={onClick}>
+          <Button ariaLabel="Search" onClick={onSearch}>
             <MobileSearchIcon />
           </Button>
         </Column>

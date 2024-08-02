@@ -17,8 +17,7 @@ const DesktopSearchBar = ({
   onChangeByLocation,
   onChangeByStatus,
   onChangeByTitle,
-  // onSearch,
-  onClick,
+  onSearch,
 }) => {
   return (
     <Row>
@@ -62,7 +61,7 @@ const DesktopSearchBar = ({
         >
           Full-time <HideMobileOnly>Only</HideMobileOnly>
         </CheckBox>
-        <Button onClick={onClick}>Search</Button>
+        <Button onClick={onSearch}>Search</Button>
       </StatusFilterColumn>
     </Row>
   );

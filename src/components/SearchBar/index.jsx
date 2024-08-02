@@ -59,7 +59,7 @@ function SearchBar({ onSearch }) {
           onChangeByLocation={handleOnChangeByLocation}
           onChangeByStatus={handleOnChangeByStatus}
           onChangeByTitle={handleOnChangeByTitle}
-          onClick={handleOnSearch}
+          onSearch={handleOnSearch}
         />
       </DesktopSearchBarContainer>
       <MobileSearchBarContainer>
@@ -72,7 +72,7 @@ function SearchBar({ onSearch }) {
           onChangeByLocation={handleOnChangeByLocation}
           onChangeByStatus={handleOnChangeByStatus}
           onChangeByTitle={handleOnChangeByTitle}
-          onClick={handleOnSearch}
+          onSearch={handleOnSearch}
         />
       </MobileSearchBarContainer>
     </>
