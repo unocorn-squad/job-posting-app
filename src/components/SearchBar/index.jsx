@@ -51,6 +51,8 @@ function SearchBar({ onSearch }) {
     <>
       <DesktopSearchBarContainer>
         <DesktopSearchBar
+          aria-label="Desktop Search Jobs"
+          aria-labelledby="desktop-search-bar-label"
           location={location}
           status={status}
           title={title}
@@ -62,6 +64,8 @@ function SearchBar({ onSearch }) {
       </DesktopSearchBarContainer>
       <MobileSearchBarContainer>
         <MobileSearchBar
+          aria-label="Mobile Search Jobs"
+          aria-labelledby="mobile-search-bar-label"
           location={location}
           status={status}
           title={title}

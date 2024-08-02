@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import styled from "@emotion/styled";
 
 import jobsData from "../../assets/data.json";
@@ -87,6 +87,7 @@ function JobSearch() {
                       contract={contract}
                       location={location}
                       jobDetailsURL={`/jobs/${id}`}
+                      aria-label={`Job at ${company}: ${position}`}
                     />
                   </FlexItem>
                 )
