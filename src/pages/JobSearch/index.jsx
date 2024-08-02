@@ -1,12 +1,13 @@
-import { lazy, Suspense, useState } from "react";
-import styled from "@emotion/styled";
+import { lazy, Suspense, useState } from 'react';
+import styled from '@emotion/styled';
 
-import jobsData from "../../assets/data.json";
-import Layout from "../../components/Layout";
-import SearchBar from "../../components/SearchBar";
-import Loader from "../../components/Loader";
+import jobsData from '../../assets/data.json';
+import Button from '../../components/Button';
+import Layout from '../../components/Layout';
+import Loader from '../../components/Loader';
+import SearchBar from '../../components/SearchBar';
 
-const JobCard = lazy(() => import("../../components/JobCard"));
+const JobCard = lazy(() => import('../../components/JobCard'));
 
 const Flex = styled.div`
   ${({ theme }) => `
@@ -31,6 +32,12 @@ const Flex = styled.div`
       gap: ${theme.layout.space800} ${theme.layout.space300};
     }
   `};
+`;
+
+const InnerBox = styled.div`
+  display: flex;
+  justify-content: center;
+  text-align: center;
 `;
 
 const FlexItem = styled.div`
@@ -59,13 +66,18 @@ function JobSearch() {
     setFilteredJobs(filteredJobs);
   };
 
+  const handleLoadMore = () => {
+    setJobs((prevJobs) => [...prevJobs, ...jobsData.slice(cursor, cursor + 6)]);
+    setCursor((prevCount) => prevCount + 6);
+  };
+
   return (
     <Layout>
       <SearchBar onSearch={handleSearch} />
       <Flex>
         <Suspense fallback={<Loader />}>
           {filteredJobs.length === 0
-            ? "No results found"
+            ? 'No results found'
             : filteredJobs.map(
                 ({
                   id,
@@ -94,7 +106,11 @@ function JobSearch() {
               )}
         </Suspense>
       </Flex>
-      {/* @TODO Import Button component here once it's complete */}
+      <InnerBox>
+        {cursor < jobsData.length - 1 && (
+          <Button onClick={handleLoadMore}>Load More</Button>
+        )}
+      </InnerBox>
     </Layout>
   );
 }
