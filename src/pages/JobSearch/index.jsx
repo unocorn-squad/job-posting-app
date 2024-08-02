@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 import styled from "@emotion/styled";
 
 import jobsData from "../../assets/data.json";
@@ -61,9 +61,15 @@ function JobSearch() {
   const [cursor, setCursor] = useState(12);
   const [jobs, setJobs] = useState(jobsData.slice(0, cursor));
   const [filteredJobs, setFilteredJobs] = useState(jobs);
+  const [filteredLength, setFilteredLength] = useState(12);
+
+  useEffect(() => {
+    setFilteredJobs(jobs);
+  }, [jobs]);
 
   const handleSearch = (filteredJobs) => {
     setFilteredJobs(filteredJobs);
+    setFilteredLength(filteredJobs.length);
   };
 
   const handleLoadMore = () => {
@@ -107,7 +113,7 @@ function JobSearch() {
         </Suspense>
       </Flex>
       <InnerBox>
-        {cursor < jobsData.length - 1 && (
+        {filteredLength >= 12 && cursor < jobsData.length - 1 && (
           <Button onClick={handleLoadMore}>Load More</Button>
         )}
       </InnerBox>
