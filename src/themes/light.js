@@ -22,7 +22,7 @@ export const theme = {
   },
   layout: {
     bgColor: 'var(--color-gray-light)',
-    maxWidth: '1024px',
+    maxWidth: '1280px',
     space50: 'var(--gutter-50)',
     space100: 'var(--gutter-100)',
     space200: 'var(--gutter-200)',
@@ -34,6 +34,10 @@ export const theme = {
     space800: 'var(--gutter-800)',
     space900: 'var(--gutter-900)',
     space1000: 'var(--gutter-1000)',
+    space1100: 'var(--gutter-1100)',
+    space1200: 'var(--gutter-1200)',
+    space1300: 'var(--gutter-1300)',
+    space1400: 'var(--gutter-1400)',
   },
   typography: {
     familyPrimary: 'var(--font-family-primary)',
@@ -105,6 +109,9 @@ export const theme = {
     description: {
       color: 'var(--color-gray-dark)',
     },
+  },
+  searchModal: {
+    bgColor: 'rgba(0, 0, 0, 0.5)',
   },
   searchBar: {
     border: {

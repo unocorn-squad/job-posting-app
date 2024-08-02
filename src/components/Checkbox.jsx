@@ -1,14 +1,12 @@
-import { useState } from "react";
-import styled from "@emotion/styled";
+import { useState } from 'react';
+import styled from '@emotion/styled';
+
+import checkIcon from '../assets/images/icons/icon-check.svg';
 
 const CheckboxContainer = styled.div`
-  display: none;
-  margin: 25px 0px 0px 20px;
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
-    display: flex;
-    gap: ${(props) => props.theme.layout.space200};
-    color: ${(props) => props.theme.checkbox.label.color};
-  }
+  display: flex;
+  align-items: center;
+  gap: ${(props) => props.theme.layout.space200};
 `;
 
 const CheckboxInput = styled.input`
@@ -20,7 +18,8 @@ const CheckboxInput = styled.input`
   border-radius: 3px;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: ${(props) => props.theme.checkbox.hoverBgColor};
   }
 
@@ -29,50 +28,28 @@ const CheckboxInput = styled.input`
     background-size: 65%;
     background-position: center 60%;
     background-repeat: no-repeat;
-    background-image: url("/src/assets/images/icons/icon-check.svg");
+    background-image: url(${checkIcon});
   }
 `;
 
 const CheckboxLabel = styled.label`
-  display: none;
-  font-size: 16px;
-
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet_small}) {
-    margin: 5px 0 0 -2px;
-    font-weight: ${(props) => props.theme.typography.fwBold};
-    display: inline;
-    span {
-      display: none;
-    }
-  }
-
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop_small}) {
-    span {
-      display: inline-block;
-    }
-  }
+  font-size: ${(props) => props.theme.typography.fs100};
+  font-weight: ${(props) => props.theme.typography.fwBold};
+  cursor: pointer;
 `;
 
-const Checkbox = ({ id, label }) => {
-  // State and handler set up for future use
-  const [isChecked, setIsChecked] = useState(false);
-
-  function handleCheck() {
-    isChecked ? setIsChecked(false) : setIsChecked(true);
-  }
-
+const Checkbox = ({ checked, id, value, onChange, children }) => {
   return (
     <CheckboxContainer>
       <CheckboxInput
-        type="checkbox"
-        name={id}
+        checked={checked}
         id={id}
-        value={id}
-        onChange={handleCheck}
+        name={id}
+        type='checkbox'
+        value={value}
+        onChange={onChange}
       />
-      <CheckboxLabel htmlFor={id}>
-        {label}
-      </CheckboxLabel>
+      <CheckboxLabel htmlFor={id}>{children}</CheckboxLabel>
     </CheckboxContainer>
   );
 };

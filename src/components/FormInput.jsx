@@ -1,22 +1,43 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-const Input = styled.input`
-  border: none;
-  outline: none;
-  flex-grow: 1;
-  padding-left: ${(props) => (props.isMobile ?  props.theme.layout.space400 :"")};
+const IconWrapper = styled.span`
+  width: 24px;
+  height: 24px;
 `;
 
-const FormInput = ({ id, placeholder, name, label, isMobile }) => {
+const InputWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.layout.space200};
+  width: 100%;
+  overflow: hidden;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0;
+  overflow: hidden;
+  font-size: ${({ theme }) => theme.typography.fs100};
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+const FormInput = ({ icon, id, label, name, placeholder, value, onChange }) => {
   return (
-    <Input
-      type="text"
-      id={id}
-      placeholder={placeholder}
-      name={name}
-      aria-label={label}
-      isMobile={isMobile}
-    />
+    <InputWrapper>
+      {icon && <IconWrapper>{icon}</IconWrapper>}
+      <Input
+        aria-label={label}
+        id={id}
+        name={name}
+        placeholder={placeholder}
+        type='text'
+        value={value}
+        onChange={onChange}
+      />
+    </InputWrapper>
   );
 };
 

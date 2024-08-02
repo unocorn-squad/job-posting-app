@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Button from './Button';
 
 const CompanyBioContainer = styled.div`
   ${({ theme }) => `
@@ -115,8 +116,7 @@ const CompanyBioCard = ({
             {formatUrlDisplayText}
           </CompanyLink>
         </TextInfo>
-        {/* TODO: Replace with button component */}
-        <button>Company Site</button>
+        <Button as='a' href={website} variant='secondary'>Company Site</Button>
       </CompanyInfo>
     </CompanyBioContainer>
   )
