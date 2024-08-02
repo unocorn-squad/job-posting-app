@@ -1,12 +1,12 @@
-import { lazy, Suspense, useState } from 'react';
-import styled from '@emotion/styled';
+import { lazy, Suspense, useEffect, useState } from "react";
+import styled from "@emotion/styled";
 
-import jobsData from '../../assets/data.json';
-import Layout from '../../components/Layout';
-import SearchBar from '../../components/SearchBar';
-import Loader from '../../components/Loader';
+import jobsData from "../../assets/data.json";
+import Layout from "../../components/Layout";
+import SearchBar from "../../components/SearchBar";
+import Loader from "../../components/Loader";
 
-const JobCard = lazy(() => import('../../components/JobCard'));
+const JobCard = lazy(() => import("../../components/JobCard"));
 
 const Flex = styled.div`
   ${({ theme }) => `
@@ -53,37 +53,44 @@ function JobSearch() {
   // This is used to determine next result items to show when the user clicks "Load More" button.
   const [cursor, setCursor] = useState(12);
   const [jobs, setJobs] = useState(jobsData.slice(0, cursor));
+  const [filteredJobs, setFilteredJobs] = useState(jobsData);
+
+  const handleSearch = (filteredJobs) => {
+    setFilteredJobs(filteredJobs);
+  };
 
   return (
     <Layout>
-      <SearchBar />
+      <SearchBar onSearch={handleSearch} />
       <Flex>
         <Suspense fallback={<Loader />}>
-          {jobs.map(
-            ({
-              id,
-              company,
-              logo,
-              logoBackground,
-              position,
-              postedAt,
-              contract,
-              location,
-            }) => (
-              <FlexItem key={id}>
-                <JobCard
-                  company={company}
-                  logo={logo}
-                  logoBackground={logoBackground}
-                  position={position}
-                  postedAt={postedAt}
-                  contract={contract}
-                  location={location}
-                  jobDetailsURL={`/jobs/${id}`}
-                />
-              </FlexItem>
-            )
-          )}
+          {filteredJobs.length === 0
+            ? "No results found"
+            : filteredJobs.map(
+                ({
+                  id,
+                  company,
+                  logo,
+                  logoBackground,
+                  position,
+                  postedAt,
+                  contract,
+                  location,
+                }) => (
+                  <FlexItem key={id}>
+                    <JobCard
+                      company={company}
+                      logo={logo}
+                      logoBackground={logoBackground}
+                      position={position}
+                      postedAt={postedAt}
+                      contract={contract}
+                      location={location}
+                      jobDetailsURL={`/jobs/${id}`}
+                    />
+                  </FlexItem>
+                )
+              )}
         </Suspense>
       </Flex>
       {/* @TODO Import Button component here once it's complete */}

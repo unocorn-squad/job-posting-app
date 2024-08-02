@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import styled from '@emotion/styled';
+import { useState } from "react";
+import styled from "@emotion/styled";
 
-import DesktopSearchBar from './DesktopSearchBar';
-import MobileSearchBar from './MobileSearchBar';
+import DesktopSearchBar from "./DesktopSearchBar";
+import MobileSearchBar from "./MobileSearchBar";
+import jobsData from "../../assets/data.json";
 
 const MobileSearchBarContainer = styled.div`
   ${({ theme }) => `
@@ -22,16 +23,29 @@ const DesktopSearchBarContainer = styled.div`
   `};
 `;
 
-function SearchBar() {
-  const [location, setLocation] = useState('');
-  const [status, useStatus] = useState(false);
-  const [title, setTitle] = useState('');
+function SearchBar({ onSearch }) {
+  const [location, setLocation] = useState("");
+  const [status, setStatus] = useState(false);
+  const [title, setTitle] = useState("");
 
   // @TODO Implement search and filter functionality.
-  const handleOnChangeByLocation = () => {};
-  const handleOnChangeByStatus = () => {};
-  const handleOnChangeByTitle = () => {};
-  const handleOnSearch = () => {};
+  const handleOnChangeByLocation = (e) => setLocation(e.target.value);
+  const handleOnChangeByStatus = () => setStatus(!status);
+  const handleOnChangeByTitle = (e) => setTitle(e.target.value);
+  const handleOnSearch = () => {
+    const filtered = jobsData.filter((job) => {
+      const jobPosition = job.position ? job.position.toLowerCase() : "";
+      const jobLocation = job.location ? job.location.toLowerCase() : "";
+      const matchesTitle = title
+        ? jobPosition.includes(title.toLowerCase())
+        : true;
+      const matchesLocation = location
+        ? jobLocation.includes(location.toLowerCase())
+        : true;
+      return matchesTitle && matchesLocation;
+    });
+    onSearch(filtered);
+  };
 
   return (
     <>
