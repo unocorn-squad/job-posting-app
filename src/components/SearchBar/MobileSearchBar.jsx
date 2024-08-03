@@ -31,8 +31,7 @@ function MobileSearchBar({
   };
 
   const handleModalOnSearch = () => {
-    // @TODO Uncomment this line once search functionality is implemented.
-    // onSearch();
+    onSearch();
     toggleModalDisplay();
   };
 
@@ -57,7 +56,7 @@ function MobileSearchBar({
             onClick={toggleModalDisplay}>
             <FilterIcon />
           </ModalButton>
-          <Button ariaLabel='Search' onClick={onSearch}>
+          <Button ariaLabel='Search' onClick={onSearch} type='submit'>
             <MobileSearchIcon />
           </Button>
         </Column>
@@ -66,34 +65,38 @@ function MobileSearchBar({
         <MobileSearchModal
           isModalOpen={isModalOpen}
           toggleModalDisplay={toggleModalDisplay}>
-          <ModalColumn
-            borderBottom
-            borderTopLeftRadius='8px'
-            borderTopRightRadius='8px'>
-            <FormInput
-              icon={<LocationIcon />}
-              id='filter-location-mobile'
-              label='Filter by location'
-              name='filter-location'
-              placeholder='Filter by location...'
-              value={location}
-              onChange={onChangeByLocation}
-            />
-          </ModalColumn>
-          <ModalColumn
-            borderBottomLeftRadius='8px'
-            borderBottomRightRadius='8px'>
-            <CheckBox
-              checked={status}
-              id='checkbox-2'
-              value={status}
-              onChange={onChangeByStatus}>
-              Full-time Only
-            </CheckBox>
-            <ModalButtonContainer>
-              <Button onClick={handleModalOnSearch}>Search</Button>
-            </ModalButtonContainer>
-          </ModalColumn>
+          <form onSubmit={handleModalOnSearch}>
+            <ModalColumn
+              borderBottom
+              borderTopLeftRadius='8px'
+              borderTopRightRadius='8px'>
+              <FormInput
+                icon={<LocationIcon />}
+                id='filter-location-mobile'
+                label='Filter by location'
+                name='filter-location'
+                placeholder='Filter by location...'
+                value={location}
+                onChange={onChangeByLocation}
+              />
+            </ModalColumn>
+            <ModalColumn
+              borderBottomLeftRadius='8px'
+              borderBottomRightRadius='8px'>
+              <CheckBox
+                checked={status}
+                id='checkbox-2'
+                value={status}
+                onChange={onChangeByStatus}>
+                Full-time Only
+              </CheckBox>
+              <ModalButtonContainer>
+                <Button onClick={handleModalOnSearch} type='submit'>
+                  Search
+                </Button>
+              </ModalButtonContainer>
+            </ModalColumn>
+          </form>
         </MobileSearchModal>
       )}
     </>

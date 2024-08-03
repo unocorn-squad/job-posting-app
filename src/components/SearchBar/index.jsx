@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import styled from '@emotion/styled';
+import { useState } from "react";
+import styled from "@emotion/styled";
 
-import DesktopSearchBar from './DesktopSearchBar';
-import MobileSearchBar from './MobileSearchBar';
+import DesktopSearchBar from "./DesktopSearchBar";
+import MobileSearchBar from "./MobileSearchBar";
 
 const MobileSearchBarContainer = styled.div`
   ${({ theme }) => `
@@ -22,42 +22,66 @@ const DesktopSearchBarContainer = styled.div`
   `};
 `;
 
-function SearchBar() {
-  const [location, setLocation] = useState('');
-  const [status, useStatus] = useState(false);
-  const [title, setTitle] = useState('');
+function SearchBar({ onSearch, jobs }) {
+  const [location, setLocation] = useState("");
+  const [status, setStatus] = useState(false);
+  const [title, setTitle] = useState("");
 
-  // @TODO Implement search and filter functionality.
-  const handleOnChangeByLocation = () => {};
-  const handleOnChangeByStatus = () => {};
-  const handleOnChangeByTitle = () => {};
-  const handleOnSearch = () => {};
+  const handleOnChangeByLocation = (e) => setLocation(e.target.value);
+
+  const handleOnChangeByStatus = () => setStatus(!status);
+
+  const handleOnChangeByTitle = (e) => setTitle(e.target.value);
+
+  const handleOnSearch = () => {
+    const filtered = jobs.filter((job) => {
+      const jobPosition = job.position ? job.position.toLowerCase() : "";
+      const jobLocation = job.location ? job.location.toLowerCase() : "";
+      const matchesTitle = title
+        ? jobPosition.includes(title.toLowerCase())
+        : true;
+      const matchesLocation = location
+        ? jobLocation.includes(location.toLowerCase())
+        : true;
+      return matchesTitle && matchesLocation;
+    });
+    onSearch(filtered);
+  };
+
+  const handleOnFormSubmit = (e) => {
+    e.preventDefault();
+    handleOnSearch();
+  };
 
   return (
-    <>
+    <form onSubmit={handleOnFormSubmit}>
       <DesktopSearchBarContainer>
         <DesktopSearchBar
+          aria-label="Desktop Search Jobs"
+          aria-labelledby="desktop-search-bar-label"
           location={location}
           status={status}
           title={title}
           onChangeByLocation={handleOnChangeByLocation}
           onChangeByStatus={handleOnChangeByStatus}
           onChangeByTitle={handleOnChangeByTitle}
-          onClick={handleOnSearch}
+          onSearch={handleOnSearch}
         />
       </DesktopSearchBarContainer>
       <MobileSearchBarContainer>
         <MobileSearchBar
+          aria-label="Mobile Search Jobs"
+          aria-labelledby="mobile-search-bar-label"
           location={location}
           status={status}
           title={title}
           onChangeByLocation={handleOnChangeByLocation}
           onChangeByStatus={handleOnChangeByStatus}
           onChangeByTitle={handleOnChangeByTitle}
-          onClick={handleOnSearch}
+          onSearch={handleOnSearch}
         />
       </MobileSearchBarContainer>
-    </>
+    </form>
   );
 }
 

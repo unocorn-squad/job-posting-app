@@ -43,6 +43,7 @@ const Button = ({
   ariaLabel = '',
   href,
   onClick,
+  type = 'button',
   variant = 'primary',
   children,
 }) => {
@@ -63,7 +64,7 @@ const Button = ({
   return (
     <StyledButton
       aria-label={ariaLabel}
-      type='button'
+      type={type}
       onClick={onClick}
       variant={variant}>
       {children}

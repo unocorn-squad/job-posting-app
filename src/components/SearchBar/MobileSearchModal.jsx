@@ -13,7 +13,7 @@ const ModalBackdrop = styled.div`
   width: 100%;
   height: 100%;
   background: ${({ theme }) => theme.searchModal.bgColor};
-  z-index: 10;
+  z-index: 100;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet_small}) {
     display: none;
@@ -49,6 +49,8 @@ const MobileSearchModal = ({ isModalOpen, toggleModalDisplay, children }) => {
       aria-hidden={!isModalOpen}
       aria-describedby='Filter job posting by location and job status'
       aria-labelledby='Additional search criterias'
+      aria-modal='true'
+      id='search-filter-dialog'
       role='dialog'
       onClick={handleBackdropClick}>
       <ModalCard>{children}</ModalCard>

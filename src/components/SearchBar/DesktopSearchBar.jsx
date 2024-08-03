@@ -58,7 +58,9 @@ const DesktopSearchBar = ({
           onChange={onChangeByStatus}>
           Full-time <HideMobileOnly>Only</HideMobileOnly>
         </CheckBox>
-        <Button onClick={onSearch}>Search</Button>
+        <Button onClick={onSearch} type='submit'>
+          Search
+        </Button>
       </StatusFilterColumn>
     </Row>
   );
