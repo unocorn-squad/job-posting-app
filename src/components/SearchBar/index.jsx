@@ -43,7 +43,10 @@ function SearchBar({ onSearch, jobs }) {
       const matchesLocation = location
         ? jobLocation.includes(location.toLowerCase())
         : true;
-      return matchesTitle && matchesLocation;
+      const matchesFullTime = status
+        ? job.contract.toLowerCase() === "full time"
+        : true;
+      return matchesTitle && matchesLocation && matchesFullTime;
     });
     onSearch(filtered);
   };
