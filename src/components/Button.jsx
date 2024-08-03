@@ -17,6 +17,7 @@ const StyledButton = styled.button`
     };
     font-size: ${theme.typography.fs100};
     font-weight: ${theme.typography.fwBold};
+    font-family: ${theme.typography.familyPrimary};
     text-align: center;
     text-decoration: none;
     cursor: pointer;
