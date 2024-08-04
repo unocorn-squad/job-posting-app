@@ -20,6 +20,7 @@ const Input = styled.input`
   padding: 0;
   overflow: hidden;
   font-size: ${({ theme }) => theme.typography.fs100};
+  font-family: ${({ theme }) => theme.typography.familyPrimary};
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
