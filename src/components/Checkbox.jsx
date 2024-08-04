@@ -1,7 +1,4 @@
-import { useState } from 'react';
 import styled from '@emotion/styled';
-
-import checkIcon from '../assets/images/icons/icon-check.svg';
 
 const CheckboxContainer = styled.div`
   display: flex;
@@ -26,9 +23,9 @@ const CheckboxInput = styled.input`
   &:checked {
     background-color: ${(props) => props.theme.checkbox.checkedBgColor};
     background-size: 65%;
-    background-position: center 60%;
+    background-position: center;
     background-repeat: no-repeat;
-    background-image: url(${checkIcon});
+    background-image: url('./images/icons/icon-check.svg');
   }
 `;
 
